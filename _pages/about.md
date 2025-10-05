@@ -6,9 +6,12 @@ redirect_from:
   - /about/
   - /about.html
 ---
-Hey there! If you have gained access to this papge then two things must be true. 1) You're hiring. 2) Something in the job description spoke to me. Maybe the company values or the mission statement. Maybe how the team was described. Maybe the research peaked my curiosity or the skillset seemed right. Or maybe, even if not the "perfect" match, I still felt I would be the best match ;) So please look around! You may see the same connection I saw. 
+If you have access to this webpage then two things must be true. 
 
-My personal website is much more thorough than my professional resume. Imbued in it are flavors of my character and persona. I hope you enjoy and remain respectful. Thank you!
+1) You're hiring
+2) Something in the job description spoke to me. Maybe the company values or the mission statement. Maybe how the team was described. Maybe the research peaked my curiosity or the skillset seemed right. Or maybe, even if not the "perfect" match, I still felt I would be the best match ;)
+
+So please look around! You may see the same connection I saw. My personal website is much more thorough than my professional resume. Along with more details and projects exemplifying my technical expertise, I have imbued this website with flavors of my character and persona. I hope you enjoy and remain respectful. Thank you!
 
 My Background
 ======
