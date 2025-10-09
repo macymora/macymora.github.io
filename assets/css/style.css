@@ -23,7 +23,7 @@ nav a {
 }
 img, video, iframe {
   max-width: 100%;
-  height: auto;
+  height: 100%;
 }
 .align-right {
   float: right;
