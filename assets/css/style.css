@@ -81,7 +81,18 @@ ul.two-column {
   height: 100%;
 }
 
-/* Alignment variants */
+/* But override for videos */
+.video-wrapper.align-left,
+.video-wrapper.align-right,
+.video-wrapper.align-center {
+  float: none;
+  display: block;
+  margin: 20px auto;
+  max-width: 1000px; /* or 100%, or whatever looks good on desktop */
+  width: 100%;
+}
+
+/* Alignment variants 
 .video-wrapper.align-left {
   float: left;
   margin-right: 20px;
@@ -97,6 +108,7 @@ ul.two-column {
   margin: 20px auto;
   display: block;
 }
+*/
 
 /* Responsive behavior for mobile */
 @media (max-width: 768px) {
