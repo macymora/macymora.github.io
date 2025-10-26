@@ -66,7 +66,7 @@ ul.two-column {
 .video-wrapper {
   position: relative;
   width: 100%;
-  max-width: 640px; /* optional: limit size */
+  max-width: 900px; /* optional: limit size */
   padding-bottom: 56.25%; /* 16:9 ratio */
   height: 0;
   overflow: hidden;
