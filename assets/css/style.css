@@ -49,11 +49,34 @@ ul.two-column {
   -webkit-columns: 2;
   -moz-columns: 2;
 }
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+.skill {
+  background: #f0f0f0;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9em;
+}
+ul li {
+  margin-bottom: 10px;
+  list-style-type: disc;
+}
+@media (min-width: 900px) {
+  section.project-content ul {
+    columns: 2;
+    column-gap: 40px;
+  }
+}
 @media (max-width: 768px) {
   body {
     max-width: 100%;
     margin: 10px;
   }
+}
   .align-right, .align-left {
     float: none;
     display: block;
@@ -72,7 +95,6 @@ ul.two-column {
   overflow: hidden;
   margin: 20px auto;
 }
-
 .video-wrapper iframe {
   position: absolute;
   top: 0;
@@ -80,7 +102,6 @@ ul.two-column {
   width: 100% !important;
   height: 100% !important; 
 }
-
 /* But override for videos */
 .video-wrapper.align-left,
 .video-wrapper.align-right,
