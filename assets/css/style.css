@@ -71,8 +71,8 @@ nav a {
 .align-center {
   display: block;
   margin: 30px auto;        /* centers horizontally */
-  width: 65%;               /* between 60–70% width of content area */
-  max-width: 900px;         /* matches your page width cap */
+  width: 50%;               /* between 60–70% width of content area */
+  max-width: 400px;         /* matches your page width cap */
 }
 
 .align-center iframe,
