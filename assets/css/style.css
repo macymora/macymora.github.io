@@ -25,40 +25,36 @@ nav a {
   text-decoration: none;
   color: #007acc;
 }
-
-/* Image + video container */
 .clearfix {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: stretch;
+  align-items: stretch; /* make image + video same height */
   gap: 0; /* no space between */
 }
 
-/* Each media block (image or video) */
+/* Each media block gets half width */
 .clearfix img,
 .clearfix .video-wrapper {
-  flex: 1 1 50%; /* each takes half width */
+  flex: 1 1 50%;
   max-width: 50%;
-  height: auto;
   margin: 0;
   padding: 0;
+  height: auto;
 }
 
-/* Keep the image fully responsive */
+/* Make image fill its half and crop nicely if needed */
 .clearfix img {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;
   object-fit: cover;
+  display: block;
 }
 
-/* Maintain 16:9 video ratio */
+/* Video wrapper uses aspect-ratio (modern CSS feature!) */
 .video-wrapper {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%;
-  height: 0;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
 }
 
@@ -71,7 +67,7 @@ nav a {
   border: none;
 }
 
-/* Mobile: stack vertically */
+/* Stack vertically on mobile */
 @media (max-width: 768px) {
   .clearfix {
     flex-direction: column;
