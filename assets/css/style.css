@@ -67,6 +67,23 @@ nav a {
   border: none;
 }
 
+/* Center-aligned media (images, videos, etc.) */
+.align-center {
+  display: block;
+  margin: 30px auto;        /* centers horizontally */
+  width: 65%;               /* between 60–70% width of content area */
+  max-width: 900px;         /* matches your page width cap */
+}
+
+.align-center iframe,
+.align-center img,
+.align-center video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;       /* optional: softens corners a bit */
+}
+
 /* Stack vertically on mobile */
 @media (max-width: 768px) {
   .clearfix {
