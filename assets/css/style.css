@@ -87,13 +87,47 @@ nav a {
   border-radius: 6px;
 }
 
-/* ---- WIDTH UTILITIES ---- */
-/* Apply to individual elements inside .clearfix */
-.w-30 { flex: 0 0 30%; max-width: 30%; }
-.w-40 { flex: 0 0 40%; max-width: 40%; }
-.w-50 { flex: 0 0 50%; max-width: 50%; }
-.w-60 { flex: 0 0 60%; max-width: 60%; }
-.w-70 { flex: 0 0 70%; max-width: 70%; }
+/* -------------------------
+   WIDTH UTILITIES (stronger)
+   ------------------------- */
+/* Use these on the direct child elements inside .clearfix:
+   <img class="w-40"> or <div class="video-wrapper w-60"> */
+
+/* Higher-specificity selectors so they override the default 50% */
+.clearfix > .w-30,
+.clearfix > img.w-30,
+.clearfix > .video-wrapper.w-30 { flex: 0 0 30% !important; max-width: 30% !important; }
+
+.clearfix > .w-40,
+.clearfix > img.w-40,
+.clearfix > .video-wrapper.w-40 { flex: 0 0 40% !important; max-width: 40% !important; }
+
+.clearfix > .w-50,
+.clearfix > img.w-50,
+.clearfix > .video-wrapper.w-50 { flex: 0 0 50% !important; max-width: 50% !important; }
+
+.clearfix > .w-60,
+.clearfix > img.w-60,
+.clearfix > .video-wrapper.w-60 { flex: 0 0 60% !important; max-width: 60% !important; }
+
+.clearfix > .w-70,
+.clearfix > img.w-70,
+.clearfix > .video-wrapper.w-70 { flex: 0 0 70% !important; max-width: 70% !important; }
+
+/* Responsive: if screen is small, utilities should fall back to 100% */
+@media (max-width: 768px) {
+  .clearfix > .w-30,
+  .clearfix > .w-40,
+  .clearfix > .w-50,
+  .clearfix > .w-60,
+  .clearfix > .w-70,
+  .clearfix > img[class*="w-"],
+  .clearfix > .video-wrapper[class*="w-"] {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+  }
+}
+
 
 /* Optional gap utility if you ever want spacing between items */
 .gap-small { gap: 10px; }
