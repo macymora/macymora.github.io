@@ -1,3 +1,6 @@
+/* -------------------------
+   GLOBAL BASE STYLING
+------------------------- */
 body { 
   font-family: Arial, sans-serif;
   margin: 40px auto;
@@ -7,7 +10,9 @@ body {
   padding: 0 15px;
 }
 
-/* Navigation styling */
+/* -------------------------
+   NAVIGATION
+------------------------- */
 nav ul {
   list-style: none;
   display: flex;
@@ -26,26 +31,28 @@ nav a {
   color: #007acc;
 }
 
-/* ---- FLEX LAYOUT FOR IMAGES + VIDEOS ---- */
+/* -------------------------
+   FLEX LAYOUT FOR IMAGES + VIDEOS
+------------------------- */
 .clearfix {
   display: flex;
   justify-content: space-between;
   align-items: stretch;
-  flex-wrap: wrap; /* allows wrapping if items don't fit horizontally */
-  gap: 0; /* no space between unless you want some */
+  flex-wrap: wrap; /* allows wrapping if too many media items */
+  gap: 0; /* set to 0 for no whitespace between */
 }
 
-/* Default: evenly split */
+/* Remove hardcoded widths — utilities control this now */
 .clearfix img,
 .clearfix .video-wrapper {
-  flex: 1 1 50%;
-  max-width: 50%;
+  flex: 0 0 auto;
+  max-width: none;
   margin: 0;
   padding: 0;
   height: auto;
 }
 
-/* Make image fill and crop nicely */
+/* Make images fill and crop neatly */
 .clearfix img {
   width: 100%;
   height: 100%;
@@ -53,36 +60,52 @@ nav a {
   display: block;
 }
 
-/* ---- VIDEO STYLING ---- */
-.video-crop {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;   /* crop edges instead of showing black bars */
-  object-position: center; /* crop equally from both sides (optional) */
-}
-
+/* -------------------------
+   VIDEO STYLING
+------------------------- */
+/* -------------------------
+   VIDEO STYLING (fixed crop)
+------------------------- */
 .video-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 9; /* default aspect ratio */
   overflow: hidden;
 }
 
+/* All videos and iframes fill their wrapper and crop cleanly */
+.video-wrapper video,
 .video-wrapper iframe {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  object-fit: cover;       /* CROPS instead of showing black bars */
+  object-position: center; /* center the crop */
   border: none;
 }
 
-/* ---- CENTER ALIGN ---- */
+/* Optional alternate aspect ratios if you need them */
+.video-wrapper.square { aspect-ratio: 1 / 1; }
+.video-wrapper.tall { aspect-ratio: 3 / 4; }
+.video-wrapper.wide { aspect-ratio: 16 / 9; }
+
+/* Optional manual crop for special cases */
+.video-crop {
+  object-fit: cover !important;
+  object-position: top center !important; /* or left, right, bottom */
+}
+
+
+/* -------------------------
+   CENTER ALIGNMENT
+------------------------- */
 .align-center {
   display: block;
   margin: 30px auto;
   width: 60%;
-  max-width: 500px;
+  max-width: 600px;
 }
 
 .align-center iframe,
@@ -95,72 +118,66 @@ nav a {
 }
 
 /* -------------------------
-   WIDTH UTILITIES (stronger)
-   ------------------------- */
-/* Use these on the direct child elements inside .clearfix:
-   <img class="w-40"> or <div class="video-wrapper w-60"> */
+   WIDTH UTILITIES (MIX & MATCH)
+------------------------- */
+/* Apply these on direct children of .clearfix */
+.w-10 { flex: 0 0 10%; max-width: 10%; }
+.w-20 { flex: 0 0 20%; max-width: 20%; }
+.w-30 { flex: 0 0 30%; max-width: 30%; }
+.w-33 { flex: 0 0 33.33%; max-width: 33.33%; }
+.w-40 { flex: 0 0 40%; max-width: 40%; }
+.w-50 { flex: 0 0 50%; max-width: 50%; }
+.w-60 { flex: 0 0 60%; max-width: 60%; }
+.w-70 { flex: 0 0 70%; max-width: 70%; }
+.w-80 { flex: 0 0 80%; max-width: 80%; }
+.w-100 { flex: 0 0 100%; max-width: 100%; }
 
-/* Higher-specificity selectors so they override the default 50% */
-.clearfix > .w-30,
-.clearfix > img.w-30,
-.clearfix > .video-wrapper.w-30 { flex: 0 0 30% !important; max-width: 30% !important; }
+/* Example usage:
+   <div class="clearfix">
+     <img src="..." class="w-40">
+     <div class="video-wrapper w-60">...</div>
+   </div>
+   OR
+   <div class="clearfix">
+     <img src="..." class="w-30">
+     <div class="video-wrapper w-40">...</div>
+     <div class="video-wrapper w-30">...</div>
+   </div>
+*/
 
-.clearfix > .w-40,
-.clearfix > img.w-40,
-.clearfix > .video-wrapper.w-40 { flex: 0 0 40% !important; max-width: 40% !important; }
-
-.clearfix > .w-50,
-.clearfix > img.w-50,
-.clearfix > .video-wrapper.w-50 { flex: 0 0 50% !important; max-width: 50% !important; }
-
-.clearfix > .w-60,
-.clearfix > img.w-60,
-.clearfix > .video-wrapper.w-60 { flex: 0 0 60% !important; max-width: 60% !important; }
-
-.clearfix > .w-70,
-.clearfix > img.w-70,
-.clearfix > .video-wrapper.w-70 { flex: 0 0 70% !important; max-width: 70% !important; }
-
-/* Responsive: if screen is small, utilities should fall back to 100% */
+/* -------------------------
+   RESPONSIVE (STACKS ON MOBILE)
+------------------------- */
 @media (max-width: 768px) {
-  .clearfix > .w-30,
-  .clearfix > .w-40,
-  .clearfix > .w-50,
-  .clearfix > .w-60,
-  .clearfix > .w-70,
-  .clearfix > img[class*="w-"],
-  .clearfix > .video-wrapper[class*="w-"] {
+  .clearfix {
+    flex-direction: column;
+  }
+
+  .clearfix > * {
     flex: 1 1 100% !important;
     max-width: 100% !important;
   }
 }
 
-
-/* Optional gap utility if you ever want spacing between items */
+/* -------------------------
+   OPTIONAL GAP UTILITIES
+------------------------- */
 .gap-small { gap: 10px; }
 .gap-medium { gap: 20px; }
 .gap-large { gap: 40px; }
 
-/* ---- VIDEO ---- */
+/* -------------------------
+   VIDEO GLOBAL STYLE
+------------------------- */
 video {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* ---- RESPONSIVE STACKING ---- */
-@media (max-width: 768px) {
-  .clearfix {
-    flex-direction: column;
-  }
-  .clearfix img,
-  .clearfix .video-wrapper {
-    max-width: 100%;
-    flex: 1 1 100%;
-  }
-}
-
-/* ---- LIST STYLING ---- */
+/* -------------------------
+   TWO-COLUMN LISTS
+------------------------- */
 ul.two-column {
   columns: 2;
   column-gap: 40px;
