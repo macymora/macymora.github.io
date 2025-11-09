@@ -1,4 +1,4 @@
-body {
+body { 
   font-family: Arial, sans-serif;
   margin: 40px auto;
   max-width: 1000px;
@@ -25,14 +25,17 @@ nav a {
   text-decoration: none;
   color: #007acc;
 }
+
+/* ---- FLEX LAYOUT FOR IMAGES + VIDEOS ---- */
 .clearfix {
   display: flex;
   justify-content: space-between;
-  align-items: stretch; /* make image + video same height */
-  gap: 0; /* no space between */
+  align-items: stretch;
+  flex-wrap: wrap; /* allows wrapping if items don't fit horizontally */
+  gap: 0; /* no space between unless you want some */
 }
 
-/* Each media block gets half width */
+/* Default: evenly split */
 .clearfix img,
 .clearfix .video-wrapper {
   flex: 1 1 50%;
@@ -42,7 +45,7 @@ nav a {
   height: auto;
 }
 
-/* Make image fill its half and crop nicely if needed */
+/* Make image fill and crop nicely */
 .clearfix img {
   width: 100%;
   height: 100%;
@@ -50,7 +53,7 @@ nav a {
   display: block;
 }
 
-/* Video wrapper uses aspect-ratio (modern CSS feature!) */
+/* ---- VIDEO STYLING ---- */
 .video-wrapper {
   position: relative;
   width: 100%;
@@ -67,12 +70,12 @@ nav a {
   border: none;
 }
 
-/* Center-aligned media (images, videos, etc.) */
+/* ---- CENTER ALIGN ---- */
 .align-center {
   display: block;
-  margin: 30px auto;        /* centers horizontally */
-  width: 50%;               /* between 60–70% width of content area */
-  max-width: 700px;         /* matches your page width cap */
+  margin: 30px auto;
+  width: 60%;
+  max-width: 700px;
 }
 
 .align-center iframe,
@@ -81,16 +84,30 @@ nav a {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 6px;       /* optional: softens corners a bit */
+  border-radius: 6px;
 }
 
+/* ---- WIDTH UTILITIES ---- */
+/* Apply to individual elements inside .clearfix */
+.w-30 { flex: 0 0 30%; max-width: 30%; }
+.w-40 { flex: 0 0 40%; max-width: 40%; }
+.w-50 { flex: 0 0 50%; max-width: 50%; }
+.w-60 { flex: 0 0 60%; max-width: 60%; }
+.w-70 { flex: 0 0 70%; max-width: 70%; }
+
+/* Optional gap utility if you ever want spacing between items */
+.gap-small { gap: 10px; }
+.gap-medium { gap: 20px; }
+.gap-large { gap: 40px; }
+
+/* ---- VIDEO ---- */
 video {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* Stack vertically on mobile */
+/* ---- RESPONSIVE STACKING ---- */
 @media (max-width: 768px) {
   .clearfix {
     flex-direction: column;
@@ -102,7 +119,7 @@ video {
   }
 }
 
-/* Two-column list layout */
+/* ---- LIST STYLING ---- */
 ul.two-column {
   columns: 2;
   column-gap: 40px;
