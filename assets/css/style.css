@@ -54,6 +54,13 @@ nav a {
 }
 
 /* ---- VIDEO STYLING ---- */
+.video-crop {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* crop edges instead of showing black bars */
+  object-position: center; /* crop equally from both sides (optional) */
+}
+
 .video-wrapper {
   position: relative;
   width: 100%;
