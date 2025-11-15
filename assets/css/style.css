@@ -191,7 +191,7 @@ ul.two-column {
   columns: 2;
   column-gap: 40px;
 }
-
+/* --- Skills section --- 
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
@@ -205,8 +205,47 @@ ul.two-column {
   border-radius: 20px;
   font-size: 0.9em;
 }
-
+*/
 ul li {
   margin-bottom: 10px;
   list-style-type: disc;
+}
+
+/* --- Skills section --- */
+/* ===== FULL-WIDTH COLORED BACKGROUND ===== */
+.skills-section {
+  width: 100%;
+  background-color: #e9f5ff; /* <<–– Change this color to ANY hex you want */
+  padding: 40px 0; /* top and bottom spacing */
+}
+
+/* ===== CENTERED INNER CONTENT ===== */
+.skills-container {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 200px 1fr; /* left column fixed, right flexible */
+  align-items: start;
+  gap: 20px;
+  padding: 0 20px; /* side padding */
+}
+
+/* ===== LEFT COLUMN TITLE ===== */
+.skills-title h2 {
+  margin: 0;
+}
+
+/* ===== RIGHT COLUMN SKILL TAGS ===== */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill {
+  background: #f0f0f0;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  white-space: nowrap; /* optional: prevents awkward breaking in middle of a word */
 }
