@@ -214,13 +214,6 @@ ul li {
 /* --- Skills section --- */
 /* ===== FULL-WIDTH COLORED BACKGROUND ===== */
 .skills-section {
-  width: 100%;
-  background-color: #e9f5ff; /* <<–– Change this color to ANY hex you want */
-  padding: 40px 0; /* top and bottom spacing */
-}
-
-/* ===== CENTERED INNER CONTENT ===== */
-.skills-section {
   width: 100vw;                   /* span full screen width */
   position: relative;
   left: 50%;
@@ -231,6 +224,17 @@ ul li {
   padding: 40px 0;
 }
 
+
+/* ===== CENTERED INNER CONTENT ===== */
+.skills-container {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 200px 1fr; /* left column fixed, right flexible */
+  align-items: start;
+  gap: 20px;
+  padding: 0 20px; /* side padding */
+}
 
 /* ===== LEFT COLUMN TITLE ===== */
 .skills-title h2 {
