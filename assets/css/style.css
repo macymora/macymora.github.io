@@ -212,37 +212,66 @@ ul li {
 
 
 /* ===== CENTERED INNER CONTENT ===== */
-.skills-container {
-  max-width: 900px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 200px 1fr; /* left column fixed, right flexible */
-  align-items: start;
-  gap: 20px;
-  padding: 0 20px; /* side padding */
+/* === Full width background === */
+.skills-section {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding: 40px 0;
+  background-color: #e9f5ff;
 }
 
-/* ===== LEFT COLUMN TITLE ===== */
+/* === Layout: 2 columns on desktop === */
+.skills-container {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 40px;
+  align-items: flex-start;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* === Left column title === */
 .skills-title h2 {
   margin: 0;
-  font-size: 2.2em;            /* font size */
-  /* font-weight: bold;           font weight */
-  color: #1b5e5d;                 /* CHANGE FONT COLOR */
-  font-family: Arial; /* CHANGE FONT FAMILY */
+  font-size: 2.2em;
+  font-weight: normal;      /* remove bolding */
+  color: #1b5e5d;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 300;         /* light */
+  text-align: left;         /* change to center if desired */
 }
 
-/* ===== RIGHT COLUMN SKILL TAGS ===== */
+/* === Skills bubble container === */
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
 }
 
+/* === Individual skill bubbles === */
 .skill {
-  background: #1b5e5d;
-  color: #ffffff;
+  background: #f0f0f0;
+  color: #333;
   padding: 6px 12px;
   border-radius: 20px;
-  font-size: 0.9em;
-  white-space: nowrap; /* optional: prevents awkward breaking in middle of a word */
+  font-size: 0.95em;
+  white-space: nowrap;
+}
+
+/* === Mobile stacking fix === */
+@media (max-width: 700px) {
+  .skills-container {
+    grid-template-columns: 1fr;   /* stack into one column */
+    gap: 20px;
+  }
+
+  .skills-title h2 {
+    text-align: center;           /* looks better on mobile */
+  }
+
+  .skills-grid {
+    justify-content: center;      /* center bubbles on mobile */
+  }
 }
