@@ -191,21 +191,7 @@ ul.two-column {
   columns: 2;
   column-gap: 40px;
 }
-/* --- Skills section --- 
-.skills-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 10px;
-}
 
-.skill {
-  background: #f0f0f0;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 0.9em;
-}
-*/
 ul li {
   margin-bottom: 10px;
   list-style-type: disc;
@@ -220,7 +206,7 @@ ul li {
   right: 50%;
   margin-left: -50vw;             /* pull background outward */
   margin-right: -50vw;
-  background-color: #e9f5ff;      /* your custom color */
+  background-color: #f2f5f5;      /* your custom color */
   padding: 40px 0;
 }
 
@@ -239,6 +225,10 @@ ul li {
 /* ===== LEFT COLUMN TITLE ===== */
 .skills-title h2 {
   margin: 0;
+  font-size: 1.6em;            /* font size */
+  font-weight: bold;           /* font weight */
+  color: #1b5e5d;                 /* CHANGE FONT COLOR */
+  font-family: Arial; /* CHANGE FONT FAMILY */
 }
 
 /* ===== RIGHT COLUMN SKILL TAGS ===== */
@@ -249,7 +239,8 @@ ul li {
 }
 
 .skill {
-  background: #f0f0f0;
+  background: #1b5e5d;
+  color: #ffffff;
   padding: 6px 12px;
   border-radius: 20px;
   font-size: 0.9em;
