@@ -7,25 +7,6 @@ body {
   padding: 0 15px;
 }
 
-/* Navigation styling
-nav ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 0;
-  margin: 0 0 20px 0;
-}
-
-nav li {
-  margin: 8px 10px;
-}
-
-nav a {
-  text-decoration: none;
-  color: #007acc;
-} */
-
 /* ===== FIXED FULL-WIDTH HEADER ===== */
 header {
   position: fixed; 
@@ -33,11 +14,11 @@ header {
   left: 0;
   width: 100%;
   z-index: 999;
-  background-color: #111;
+  background-color: #242626;
   padding: 15px 0;
 
   /* subtle depth shadow */
-  box-shadow: 0 3px 10px #313333;
+  box-shadow: 0 3px 10px #5b5d5d;
 }
 
 /* Prevent rest of page from hiding under navbar */
@@ -53,6 +34,11 @@ nav ul {
   list-style: none; /* <-- removes dots */
   margin: 0;
   padding: 0;
+}
+
+nav ul,
+nav li {
+  list-style: none;
 }
 
 /* ===== NAVIGATION LINKS ===== */
