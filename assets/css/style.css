@@ -220,15 +220,17 @@ ul li {
 }
 
 /* ===== CENTERED INNER CONTENT ===== */
-.skills-container {
-  max-width: 1000px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 200px 1fr; /* left column fixed, right flexible */
-  align-items: start;
-  gap: 20px;
-  padding: 0 20px; /* side padding */
+.skills-section {
+  width: 100vw;                   /* span full screen width */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;             /* pull background outward */
+  margin-right: -50vw;
+  background-color: #e9f5ff;      /* your custom color */
+  padding: 40px 0;
 }
+
 
 /* ===== LEFT COLUMN TITLE ===== */
 .skills-title h2 {
