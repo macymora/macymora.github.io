@@ -232,11 +232,11 @@ ul li {
 
 /* ===== LEFT COLUMN TITLE ===== */
 .skills-title h2 {
-  margin: 0;
+  margin-left: 10px;
   font-size: 2em;            /* font size */
   font-weight: 500;           /*font weight */
   color: #1b5e5d;                 /* CHANGE FONT COLOR */
-  font-family: Arial; /* CHANGE FONT FAMILY */
+  font-family: Times, sans-serif; /* CHANGE FONT FAMILY */
 }
 
 /* ===== RIGHT COLUMN SKILL TAGS ===== */
@@ -280,7 +280,7 @@ ul li {
   margin-left: -50vw;             /* pull background outward */
   margin-right: -50vw;
   background-color: #1b5e5d;      /* your custom color */
-  padding: 40px 0;
+  padding: 20px 0px;
 }
 
 /* Inner wrapper limited to 900–1000px like your body */
@@ -298,9 +298,10 @@ ul li {
 
 /* ===== MAIN TITLE ===== */
 .page-header h1 {
-  margin: 0 0 15px 0;
-  font-size: 2.5em;       /* adjust title size */
-  font-weight: 500;       /* boldness */
+  margin: 50px 0 50px 0;    /* top, right, bottom, left*/
+  font-size: 3em;       /* adjust title size */
+  font-family: Times, sans-serif;
+  font-weight: 400;       /* boldness */
   color: #ffffff;         /* title color */
 }
 
