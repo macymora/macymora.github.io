@@ -246,3 +246,19 @@ ul li {
   font-size: 0.9em;
   white-space: nowrap; /* optional: prevents awkward breaking in middle of a word */
 }
+
+/* ===== MOBILE FRIENDLY STACKING =====*/
+@media (max-width: 700px) {
+  .skills-container {
+    grid-template-columns: 1fr;  /* stack into one column */
+    text-align: center;          /* center text for better mobile appearance */
+  }
+
+  .skills-title h2 {
+    margin-bottom: 10px;         /* spacing between title and skills */
+  }
+
+  .skills-grid {
+    justify-content: center;     /* center skill bubbles on small screens */
+  }
+} 
