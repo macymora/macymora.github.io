@@ -233,8 +233,8 @@ ul li {
 /* ===== LEFT COLUMN TITLE ===== */
 .skills-title h2 {
   margin: 0;
-  font-size: 2.2em;            /* font size */
-  /* font-weight: bold;           font weight */
+  font-size: 2em;            /* font size */
+  font-weight: 500;           /*font weight */
   color: #1b5e5d;                 /* CHANGE FONT COLOR */
   font-family: Arial; /* CHANGE FONT FAMILY */
 }
@@ -270,3 +270,37 @@ ul li {
     justify-content: center;     /* center skill bubbles on small screens */
   }
 } 
+
+/* ===== FULL-WIDTH HEADER SECTION ===== */
+.page-header {
+  width: 100%;
+  background: #1b5e5d;   /* ← CHANGE BACKGROUND COLOR HERE */
+  padding: 40px 0;        /* top/bottom spacing */
+  margin-bottom: 30px;
+}
+
+/* Inner wrapper limited to 900–1000px like your body */
+.page-header-inner {
+  max-width: 1000px;      /* matches your body width */
+  margin: 0 auto;
+  padding: 0 20px;        /* side padding for mobile */
+  text-align: center;
+  color: #fff;            /* default: white text */
+}
+
+/* ===== MAIN TITLE ===== */
+.page-header h1 {
+  margin: 0 0 15px 0;
+  font-size: 2.2em;       /* adjust title size */
+  font-weight: 700;       /* boldness */
+  color: #ffffff;         /* title color */
+}
+
+/* ===== SUBTITLE ===== */
+.page-subtitle {
+  margin: 0;
+  font-size: 1.1em;       /* smaller subtitle text */
+  font-style: italic;     /* italics */
+  color: #e6f7f7;         /* lighter white/green tint */
+  font-weight: 300;       /* light weight */
+}
