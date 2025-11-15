@@ -26,30 +26,52 @@ nav a {
   color: #007acc;
 } */
 
+/* ===== FIXED FULL-WIDTH HEADER ===== */
 header {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
   background-color: #111;
   padding: 15px 0;
+
+  /* subtle depth shadow */
+  box-shadow: 0 3px 10px #313333;
 }
 
+/* Prevent rest of page from hiding under navbar */
+body {
+  padding-top: 75px; /* adjust if you change header height */
+}
+
+/* ===== NAVIGATION LIST ===== */
 nav ul {
   display: flex;
   justify-content: center;
   gap: 20px;
-  list-style: none;
+  list-style: none; /* <-- removes dots */
   margin: 0;
   padding: 0;
 }
 
+/* ===== NAVIGATION LINKS ===== */
 nav a {
   color: #eee;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease;
+
+  padding: 10px 14px;           /* the "button" area */
+  border-radius: 6px;           /* rounded edges */
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
+/* ===== HOVER EFFECT ===== */
 nav a:hover {
-  color: #00aaff;
+  background-color: #1b5e5d;    /* change whole block color */
+  color: white;
 }
+
 
 
 /* ---- FLEX LAYOUT FOR IMAGES + VIDEOS ---- */
