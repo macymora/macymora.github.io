@@ -103,14 +103,15 @@ nav ul {
   display: flex;
   justify-content: center;
   gap: 20px;
-  list-style: none; /* <-- removes dots */
+  list-style: none !important; /* <-- removes dots */
   margin: 0;
   padding: 0;
 }
 
 nav ul,
 nav li {
-  list-style: none;
+  list-style: none !important;
+  list-style-type: none !important;
 }
 
 /* ===== NAVIGATION LINKS ===== */
