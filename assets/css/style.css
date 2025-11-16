@@ -130,10 +130,11 @@ nav a:hover {
   line-height: 1.2;
 }
 
-
-
-
-
+.section-title {
+  color: #002a44;      /* change the color */
+  font-weight: 400;    /* optional */
+  margin-top: 15px;    /* optional spacing */
+}
 
 /* ----------------------------- */
 /* --- 5. MEDIA: IMGS & VIDS --- */
@@ -317,7 +318,7 @@ ul li {
   margin-left: 10px;
   font-size: 2.2em;            /* font size */
   font-weight: 400;           /*font weight */
-  color: #004266;                 /* CHANGE FONT COLOR */
+  color: #404142;                 /* CHANGE FONT COLOR */
   font-family: Arial, sans-serif; /* CHANGE FONT FAMILY */
 }
 
