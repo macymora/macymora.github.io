@@ -66,6 +66,7 @@ body {
   font-size: 3em;       /* adjust title size */
   font-family: Arial, sans-serif;
   font-weight: 300;       /* boldness */
+  background-color: #1b5e5d;  
   color: #ffffff;         /* title color */
 }
 
@@ -308,8 +309,8 @@ ul li {
   display: grid;
   grid-template-columns: 1fr 1fr; /* left column fixed, right flexible */
   align-items: start;
-  /* gap: 20px;
-  padding: 0 20px; side padding */
+  gap: 20px;
+  padding: 0 20px; /* side padding */
 }
 
 /* ===== LEFT COLUMN TITLE ===== */
