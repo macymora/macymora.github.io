@@ -341,7 +341,7 @@ ul li {
   margin-left: 10px;
   font-size: 2.2em;            /* font size */
   font-weight: 500;           /*font weight */
-  color: #1b5e5d;                 /* CHANGE FONT COLOR */
+  color: #3c3c3c;                 /* CHANGE FONT COLOR */
   font-family: Arial, sans-serif; /* CHANGE FONT FAMILY */
 }
 
@@ -353,7 +353,7 @@ ul li {
 }
 
 .skill {
-  background: #1b5e5d;
+  background: #555858;
   color: #ffffff;
   padding: 6px 12px;
   border-radius: 20px;
