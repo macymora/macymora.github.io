@@ -9,7 +9,7 @@ body {
 
 
 
-/* FULL-WIDTH BANNER (fixed) */
+/* FULL-WIDTH BANNER (fixed)
 .banner {
   width: 100vw;
   margin-left: calc(50% - 50vw);
@@ -23,8 +23,9 @@ body {
   position: relative;
   z-index: 1;
 }
+*/
 
-/* OVERLAPPING HEADER BLOCK */
+/* OVERLAPPING HEADER BLOCK 
 .page-header.overlap {
   margin-top: -40px;
   border-radius: 12px;
@@ -36,6 +37,19 @@ body {
 
   position: relative;
   z-index: 5;
+} */
+
+.banner-image {
+  width: 100vw; 
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+.banner-image img {
+  width: 100%;
+  height: 260px;      /* choose any height */
+  object-fit: cover;  /* crop to fill without distortion */
+  display: block;
 }
 
 
@@ -314,7 +328,7 @@ ul li {
   max-width: 800px;
   margin: auto;
   display: grid;
-  grid-template-columns: 1fr 1fr; /* left column fixed, right flexible */
+  grid-template-columns: 100px 1fr; /* left column fixed, right flexible */
   align-items: start;
   gap: 20px;
   padding: 0 20px; /* side padding */
@@ -323,7 +337,7 @@ ul li {
 /* ===== LEFT COLUMN TITLE ===== */
 .skills-title h2 {
   margin-left: 10px;
-  font-size: 2em;            /* font size */
+  font-size: 2.2em;            /* font size */
   font-weight: 500;           /*font weight */
   color: #1b5e5d;                 /* CHANGE FONT COLOR */
   font-family: Arial, sans-serif; /* CHANGE FONT FAMILY */
