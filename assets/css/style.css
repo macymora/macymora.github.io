@@ -86,18 +86,23 @@ nav a:hover {
   /*display: block;*/
 }
 
-/* ===== Overlay text block ===== */
+
+
+/* ===== Overlay semicircle text block ===== */
 .banner-text {
   position: absolute;
   top: 50%;
-  right: 40px;
+  right: 0;                       /* flush against the RIGHT edge */
   transform: translateY(-50%);
 
-  width: 300px;
-  height: 150px;
-  border-radius: 0 150px 150px 0;
-  
+  width: 500px;                   /* enlarged width */
+  height: 400px;                  /* enlarged height (80% of 500px banner) */
+
+  /* FLIPPED semicircle (curve on LEFT side) */
+  border-radius: 200px 0 0 200px;
+
   background: rgba(255, 255, 255, 0.80);
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -106,12 +111,13 @@ nav a:hover {
 }
 
 .banner-text span {
-  font-size: 42px;
+  font-size: 64px;                /* scaled up to match larger shape */
   font-weight: 600;
   color: #1b1b1b;
-  padding: 10px 20px;
   text-align: center;
+  padding: 20px 40px;
 }
+
 
 
 
