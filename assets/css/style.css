@@ -131,8 +131,8 @@ nav a:hover {
 }
 
 .section-title {
-  color: #002a44;      /* change the color */
-  font-weight: 400;    /* optional */
+  color: #00304e;      /* change the color */
+  font-weight: 500;    /* optional */
   margin-top: 15px;    /* optional spacing */
 }
 
@@ -318,7 +318,7 @@ ul li {
   margin-left: 10px;
   font-size: 2.2em;            /* font size */
   font-weight: 400;           /*font weight */
-  color: #404142;                 /* CHANGE FONT COLOR */
+  color: #4e4f50;                 /* CHANGE FONT COLOR */
   font-family: Arial, sans-serif; /* CHANGE FONT FAMILY */
 }
 
@@ -330,7 +330,7 @@ ul li {
 }
 
 .skill {
-  background: #818484;
+  background: #727575;
   color: #ffffff;
   padding: 6px 12px;
   border-radius: 20px;
