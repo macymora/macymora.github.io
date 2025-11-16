@@ -72,10 +72,6 @@ nav a:hover {
 /* ===== 3. BANNER IMAGE ===== */
 /* --------------------------- */
 
-.banner {
-  margin-top: -20px; /* tune until the gap disappears */
-}
-
 .banner-image {
   width: 100vw; 
   margin-left: calc(50% - 50vw);
@@ -89,6 +85,26 @@ nav a:hover {
   display: block;
 }
 
+/* ===== Overlay text block ===== */
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: 48px;
+  font-weight: 600;
+  color: #fff;
+
+  /* Frosted glass effect */
+  background: rgba(255, 255, 255, 0.55);  /* semi-transparent white */
+  backdrop-filter: blur(8px);             /* blur behind the text */
+  padding: 20px 40px;
+  border-radius: 12px;
+
+  text-align: center;
+  z-index: 2;
+}
 
 
 /* ------------------ */
