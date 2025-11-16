@@ -123,7 +123,7 @@ nav a:hover {
 /* ===== MAIN TITLE ===== */
 .page-header h1 {
   margin: 0;
-  font-size: 2em;
+  font-size: 1.6em;
   font-family: Arial, sans-serif;
   font-weight: 300;
   color: #ffffff;
@@ -317,7 +317,7 @@ ul li {
   margin-left: 10px;
   font-size: 2.2em;            /* font size */
   font-weight: 400;           /*font weight */
-  color: #3c3c3c;                 /* CHANGE FONT COLOR */
+  color: #004266;                 /* CHANGE FONT COLOR */
   font-family: Arial, sans-serif; /* CHANGE FONT FAMILY */
 }
 
@@ -329,7 +329,7 @@ ul li {
 }
 
 .skill {
-  background: #999c9c;
+  background: #818484;
   color: #ffffff;
   padding: 6px 12px;
   border-radius: 20px;
