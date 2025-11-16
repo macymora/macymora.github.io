@@ -62,7 +62,7 @@ nav a {
 
 /* ===== HOVER EFFECT ===== */
 nav a:hover {
-  background-color: #1b5e5d;    /* change whole block color */
+  background-color: #0072b1;    /* change whole block color */
   color: white;
 }
 
@@ -102,13 +102,13 @@ nav a:hover {
 
   background: linear-gradient(
     to right,
-    #1882c4 0%,        /* blue starts */
-    #1882c4 50%,       /* blue ends at midpoint */
+    #0072b1 0%,        /* blue starts */
+    #0072b1 55%,       /* blue ends at midpoint */
     transparent 50%,   /* white begins */
     transparent 100%
   );
 
-  padding: 40px 0;             /* top/bottom padding */
+  padding: 20px 0;             /* top/bottom padding */
   margin-top: 40px;            /* floating spacing */
   margin-bottom: 40px;
 }
@@ -123,7 +123,7 @@ nav a:hover {
 /* ===== MAIN TITLE ===== */
 .page-header h1 {
   margin: 0;
-  font-size: 3em;
+  font-size: 2em;
   font-family: Arial, sans-serif;
   font-weight: 300;
   color: #ffffff;
