@@ -306,10 +306,10 @@ ul li {
   max-width: 800px;
   margin: auto;
   display: grid;
-  grid-template-columns: 200px 1fr; /* left column fixed, right flexible */
+  grid-template-columns: 1fr 1fr; /* left column fixed, right flexible */
   align-items: start;
-  gap: 20px;
-  padding: 0 20px; /* side padding */
+  /* gap: 20px;
+  padding: 0 20px; side padding */
 }
 
 /* ===== LEFT COLUMN TITLE ===== */
