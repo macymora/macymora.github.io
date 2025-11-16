@@ -1,6 +1,6 @@
 body { 
   font-family: Arial, sans-serif;
-  font-weight: 200;
+  font-weight: 100;
   font-size: 1.3em;       
   margin: 40px auto;
   max-width: 900px;
@@ -40,6 +40,10 @@ body {
   position: relative;
   z-index: 5;
 } */
+
+.banner {
+  margin-top: -20px; /* tune until the gap disappears */
+}
 
 .banner-image {
   width: 100vw; 
