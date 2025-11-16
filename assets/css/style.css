@@ -72,16 +72,19 @@ nav a:hover {
 /* ===== 3. BANNER IMAGE ===== */
 /* --------------------------- */
 .banner-image {
-  width: 100%;
-  overflow: hidden;      /* ensures no overflow on mobile */
+  position: relative;
+  width: 100vw; 
+  margin-left: calc(50% - 50vw);  /* breaks out of body max-width */
+  margin-right: calc(50% - 50vw);
+  overflow: hidden;               /* prevents horizontal scroll */
 }
 
 .banner-image img {
   width: 100%;
-  height: auto;          /* preserves aspect ratio */
-  max-width: 1920px;     /* prevents stretching beyond native width */
+  height: auto;
   display: block;
-  margin: 0 auto;        /* centers image on large screens */
+  max-width: 1920px;              /* prevents upscaling beyond native resolution */
+  margin: 0 auto;                 /* centers on ultrawide screens */
 }
 
 
