@@ -10,57 +10,6 @@ body {
 
 
 
-/* ===== FULL-WIDTH BANNER ===== */
-.banner {
-  width: 100%;
-  height: 280px;                          /* adjust height as desired */
-  background-image: var(--banner-image);  /* uses the HTML-supplied image */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  margin: 0;
-}
-
-/* Soft gradient overlay for readability */
-.banner::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.35);            /* dark overlay */
-  z-index: 1;
-}
-
-/* ===== TEXT OVERLAY ===== */
-.banner-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  z-index: 2;
-}
-
-.banner-overlay h1 {
-  font-size: 2.4em;
-  margin: 0;
-  font-weight: 600;
-}
-
-.banner-overlay .subheader {
-  margin-top: 12px;
-  font-size: 1.1em;
-  font-style: italic;
-  font-weight: 300;
-  color: #e8e8e8;
-}
-
-
-
-
-
-
 
 
 /* ===== FULL-WIDTH HEADER SECTION ===== */
