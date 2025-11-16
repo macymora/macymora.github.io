@@ -93,47 +93,36 @@ nav a:hover {
 /* --- 4. HEADER --- */
 /* ----------------- */
 
-/* ===== FULL-WIDTH HEADER SECTION ===== */
+/* ===== FLOATING FULL-WIDTH HEADER BLOCK ===== */
 .page-header {
-  width: 100vw;                   /* span full screen width */
+  background-color: #1882c4;   /* rectangle color */
+  width: 100vw;                /* full width */
   position: relative;
   left: 50%;
   right: 50%;
-  margin-left: -50vw;             /* pull background outward */
+  margin-left: -50vw;          /* break out of body width */
   margin-right: -50vw;
-  background-color: #1b5e5d;      /* your custom color */
-  padding: 20px 0px;
+
+  padding: 40px 0;             /* vertical padding */
+  margin-top: 40px;            /* white space above */
+  margin-bottom: 40px;         /* white space below */
 }
 
-/* Inner wrapper limited to 900–1000px like your body */
-.page-header-inner {
-  width: 100vw;                   /* span full screen width */
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;             /* pull background outward */
-  margin-right: -50vw;
-  padding: 0 20px;        /* side padding for mobile */
-  text-align: center;
-  color: #fff;            /* default: white text */
+/* ===== HEADER TEXT AREA (CONSTRAINED LEFT HALF) ===== */
+.header-inner {
+  max-width: min(1000px, 50vw);  /* half-screen, but never exceed ~1000px */
+  margin-left: 5vw;              /* nice left padding */
+  margin-right: auto;
 }
 
 /* ===== MAIN TITLE ===== */
 .page-header h1 {
-  margin: 50px 0 50px 0;    /* top, right, bottom, left*/
-  font-size: 3em;       /* adjust title size */
-  font-family: Arial, sans-serif;
-  font-weight: 300;       /* boldness */ 
-  color: #ffffff;         /* title color */
-}
-
-/* ===== SUBTITLE ===== */
-.page-subtitle {
   margin: 0;
-  font-size: 1.1em;       /* smaller subtitle text */
-  font-style: italic;     /* italics */
-  color: #e6f7f7;         /* lighter white/green tint */
-  font-weight: 300;       /* light weight */
+  font-size: 3em;
+  font-family: Arial, sans-serif;
+  font-weight: 300;
+  color: #ffffff;
+  line-height: 1.2;
 }
 
 
