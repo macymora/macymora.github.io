@@ -93,26 +93,31 @@ nav a:hover {
 /* --- 4. HEADER --- */
 /* ----------------- */
 
-/* ===== FLOATING FULL-WIDTH HEADER BLOCK ===== */
+/* ===== LEFT-HALF HEADER BLOCK ===== */
 .page-header {
-  background-color: #1882c4;   /* rectangle color */
-  width: 100vw;                /* full width */
+  width: 100vw;                /* full width container */
   position: relative;
   left: 50%;
-  right: 50%;
   margin-left: -50vw;          /* break out of body width */
-  margin-right: -50vw;
 
-  padding: 40px 0;             /* vertical padding */
-  margin-top: 40px;            /* white space above */
-  margin-bottom: 40px;         /* white space below */
+  background: linear-gradient(
+    to right,
+    #1882c4 0%,        /* blue starts */
+    #1882c4 50%,       /* blue ends at midpoint */
+    transparent 50%,   /* white begins */
+    transparent 100%
+  );
+
+  padding: 40px 0;             /* top/bottom padding */
+  margin-top: 40px;            /* floating spacing */
+  margin-bottom: 40px;
 }
 
-/* ===== HEADER TEXT AREA (CONSTRAINED LEFT HALF) ===== */
+/* ===== TEXT BLOCK (inside blue zone) ===== */
 .header-inner {
-  max-width: min(1000px, 50vw);  /* half-screen, but never exceed ~1000px */
-  margin-left: 5vw;              /* nice left padding */
-  margin-right: auto;
+  width: 50vw;                 /* same half as the blue area */
+  max-width: 1000px;           /* prevent over-expansion */
+  padding-left: 5vw;           /* nice breathing room */
 }
 
 /* ===== MAIN TITLE ===== */
@@ -124,6 +129,7 @@ nav a:hover {
   color: #ffffff;
   line-height: 1.2;
 }
+
 
 
 
