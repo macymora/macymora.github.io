@@ -1,7 +1,11 @@
+/* ----------------- */
+/* ===== 1. BODY ===== */
+/* ----------------- */
+
 body { 
   font-family: Arial, sans-serif;
   font-weight: 100;
-  font-size: 1.3em;       
+  font-size: 1.1em;       
   margin: 40px auto;
   max-width: 900px;
   line-height: 1.6;
@@ -11,106 +15,9 @@ body {
 
 
 
-/* FULL-WIDTH BANNER (fixed)
-.banner {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-
-  height: 260px;
-  background-image: var(--banner-image);
-  background-size: cover;
-  background-position: center;
-
-  position: relative;
-  z-index: 1;
-}
-*/
-
-/* OVERLAPPING HEADER BLOCK 
-.page-header.overlap {
-  margin-top: -40px;
-  border-radius: 12px;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #1b5e5d;
-  padding: 20px 30px;
-
-  position: relative;
-  z-index: 5;
-} */
-
-.banner {
-  margin-top: -20px; /* tune until the gap disappears */
-}
-
-.banner-image {
-  width: 100vw; 
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-}
-
-.banner-image img {
-  width: 100%;
-  height: 500px;      /* choose any height */
-  object-fit: cover;  /* crop to fill without distortion */
-  display: block;
-}
-
-
-
-
-
-
-/* ===== FULL-WIDTH HEADER SECTION ===== */
-.page-header {
-  width: 100vw;                   /* span full screen width */
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;             /* pull background outward */
-  margin-right: -50vw;
-  background-color: #1b5e5d;      /* your custom color */
-  padding: 20px 0px;
-}
-
-/* Inner wrapper limited to 900–1000px like your body */
-.page-header-inner {
-  width: 100vw;                   /* span full screen width */
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;             /* pull background outward */
-  margin-right: -50vw;
-  padding: 0 20px;        /* side padding for mobile */
-  text-align: center;
-  color: #fff;            /* default: white text */
-}
-
-/* ===== MAIN TITLE ===== */
-.page-header h1 {
-  margin: 50px 0 50px 0;    /* top, right, bottom, left*/
-  font-size: 3em;       /* adjust title size */
-  font-family: Arial, sans-serif;
-  font-weight: 300;       /* boldness */ 
-  color: #ffffff;         /* title color */
-}
-
-/* ===== SUBTITLE ===== */
-.page-subtitle {
-  margin: 0;
-  font-size: 1.1em;       /* smaller subtitle text */
-  font-style: italic;     /* italics */
-  color: #e6f7f7;         /* lighter white/green tint */
-  font-weight: 300;       /* light weight */
-}
-
-
-
-
-
-/* --- NAGIVATION BAR --- */
+/* ------------------------- */
+/* --- 2. NAGIVATION BAR --- */
+/* ------------------------- */
 
 /* ===== FIXED FULL-WIDTH HEADER ===== */
 header {
@@ -161,8 +68,83 @@ nav a:hover {
 
 
 
+/* --------------------------- */
+/* ===== 3. BANNER IMAGE ===== */
+/* --------------------------- */
+
+.banner {
+  margin-top: -20px; /* tune until the gap disappears */
+}
+
+.banner-image {
+  width: 100vw; 
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+.banner-image img {
+  width: 100%;
+  height: 500px;      /* choose any height */
+  object-fit: cover;  /* crop to fill without distortion */
+  display: block;
+}
 
 
+
+/* ------------------ */
+/* --- 4. HEADER --- */
+/* ----------------- */
+
+/* ===== FULL-WIDTH HEADER SECTION ===== */
+.page-header {
+  width: 100vw;                   /* span full screen width */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;             /* pull background outward */
+  margin-right: -50vw;
+  background-color: #1b5e5d;      /* your custom color */
+  padding: 20px 0px;
+}
+
+/* Inner wrapper limited to 900–1000px like your body */
+.page-header-inner {
+  width: 100vw;                   /* span full screen width */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;             /* pull background outward */
+  margin-right: -50vw;
+  padding: 0 20px;        /* side padding for mobile */
+  text-align: center;
+  color: #fff;            /* default: white text */
+}
+
+/* ===== MAIN TITLE ===== */
+.page-header h1 {
+  margin: 50px 0 50px 0;    /* top, right, bottom, left*/
+  font-size: 3em;       /* adjust title size */
+  font-family: Arial, sans-serif;
+  font-weight: 300;       /* boldness */ 
+  color: #ffffff;         /* title color */
+}
+
+/* ===== SUBTITLE ===== */
+.page-subtitle {
+  margin: 0;
+  font-size: 1.1em;       /* smaller subtitle text */
+  font-style: italic;     /* italics */
+  color: #e6f7f7;         /* lighter white/green tint */
+  font-weight: 300;       /* light weight */
+}
+
+
+
+
+
+/* ----------------------------- */
+/* --- 5. MEDIA: IMGS & VIDS --- */
+/* ----------------------------- */
 
 /* ---- FLEX LAYOUT FOR IMAGES + VIDEOS ---- */
 .clearfix {
@@ -310,12 +292,9 @@ ul li {
 }
 
 
-
-
-
-
-
-/* --- Skills section --- */
+/* --------------------------*/
+/* --- 6. SKILLS SECTION --- */
+/* --------------------------*/
 
 /* ===== FULL-WIDTH COLORED BACKGROUND ===== */
 .skills-section {
@@ -344,7 +323,7 @@ ul li {
 .skills-title h2 {
   margin-left: 10px;
   font-size: 2.2em;            /* font size */
-  font-weight: 500;           /*font weight */
+  font-weight: 400;           /*font weight */
   color: #3c3c3c;                 /* CHANGE FONT COLOR */
   font-family: Arial, sans-serif; /* CHANGE FONT FAMILY */
 }
@@ -357,7 +336,7 @@ ul li {
 }
 
 .skill {
-  background: #555858;
+  background: #999c9c;
   color: #ffffff;
   padding: 6px 12px;
   border-radius: 20px;
