@@ -4,7 +4,7 @@
 
 body { 
   font-family: Arial, sans-serif;
-  font-weight: 100;
+  font-weight: 200;
   font-size: 1.1em;       
   margin: 40px auto;
   max-width: 900px;
@@ -95,29 +95,32 @@ nav a:hover {
 
 /* ===== LEFT-HALF HEADER BLOCK ===== */
 .page-header {
-  width: 100vw;                /* full width container */
+  width: 100vw;
   position: relative;
   left: 50%;
-  margin-left: -50vw;          /* break out of body width */
+  margin-left: -50vw;     /* full-width breakout */
 
   background: linear-gradient(
     to right,
-    #0072b1 0%,        /* blue starts */
-    #0072b1 55%,       /* blue ends at midpoint */
-    transparent 50%,   /* white begins */
+    transparent 0%,       /* left 0–29% = white */
+    transparent 30%,      /* start blue at 30% */
+    #0072b1 30%,          /* blue begins */
+    #0072b1 50%,          /* blue ends at midpoint (50%) */
+    transparent 50%,      /* rest white */
     transparent 100%
   );
 
-  padding: 20px 0;             /* top/bottom padding */
-  margin-top: 40px;            /* floating spacing */
+  padding: 20px 0;
+  margin-top: 40px;
   margin-bottom: 40px;
 }
 
-/* ===== TEXT BLOCK (inside blue zone) ===== */
+/* ===== TEXT BLOCK (inside blue area) ===== */
 .header-inner {
-  width: 50vw;                 /* same half as the blue area */
-  max-width: 1000px;           /* prevent over-expansion */
-  padding-left: 5vw;           /* nice breathing room */
+  width: 20vw;            /* fits inside the 30% → 50% band */
+  max-width: 600px;
+  margin-left: 30vw;      /* aligns text at the start of the blue zone */
+  padding-left: 2vw;
 }
 
 /* ===== MAIN TITLE ===== */
@@ -131,7 +134,7 @@ nav a:hover {
 }
 
 .section-title {
-  color: #00304e;      /* change the color */
+  color: #00304e;    /* change the color */
   font-weight: 500;    /* optional */
   margin-top: 15px;    /* optional spacing */
 }
