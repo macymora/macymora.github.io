@@ -103,8 +103,8 @@ nav a:hover {
   background: linear-gradient(
     to right,
     transparent 0%,       /* left 0–29% = white */
-    transparent 30%,      /* start blue at 30% */
-    #0072b1 30%,          /* blue begins */
+    transparent 10%,      /* start blue at 30% */
+    #0072b1 10%,          /* blue begins */
     #0072b1 50%,          /* blue ends at midpoint (50%) */
     transparent 50%,      /* rest white */
     transparent 100%
@@ -117,9 +117,9 @@ nav a:hover {
 
 /* ===== TEXT BLOCK (inside blue area) ===== */
 .header-inner {
-  width: 20vw;            /* fits inside the 30% → 50% band */
+  width: 40vw;            /* fits inside the 30% → 50% band */
   max-width: 600px;
-  margin-left: 30vw;      /* aligns text at the start of the blue zone */
+  margin-left: 10vw;      /* aligns text at the start of the blue zone */
   padding-left: 2vw;
 }
 
