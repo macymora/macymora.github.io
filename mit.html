@@ -9,6 +9,7 @@
 <body>
 <header>
   <nav>
+    <span class="nav-toggle">☰</span>
     <ul>
       <li><a href="index.html">Homepage</a></li>
       <li><a href="sharkninja.html">SharkNinja</a></li>
@@ -113,3 +114,12 @@
     <li>🧾 <a href="pdfs/MSRP2017_poster.pdf">MSRP presentation</a></li>
   </ul>
 </section>
+
+<script>
+  document.querySelector('.nav-toggle').onclick = () => {
+    document.querySelector('nav ul').classList.toggle('show');
+  };
+</script>
+
+</body>
+</html>

@@ -66,6 +66,42 @@ nav a:hover {
   color: white;
 }
 
+/* ===== MOBILE NAVIGATION ===== */
+@media (max-width: 768px) {
+
+  /* Stack items vertically */
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #242626;
+    width: 100%;
+    padding: 10px 20px;
+    display: none; /* hidden until hamburger clicked */
+  }
+
+  nav ul.show {
+    display: flex; /* reveal when active */
+  }
+
+  /* Make navbar shorter */
+  header {
+    padding: 10px 0;
+  }
+
+  /* Hamburger button */
+  .nav-toggle {
+    display: block;
+    cursor: pointer;
+    color: #eee;
+    font-size: 26px;
+    padding: 5px 20px;
+  }
+}
+
+/* ===== DESKTOP: hide hamburger ===== */
+.nav-toggle {
+  display: none;
+}
 
 
 /* --------------------------- */

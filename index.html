@@ -7,8 +7,10 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+  <!-- Navigation Bar -->
 <header>
   <nav>
+    <span class="nav-toggle">☰</span>
     <ul>
       <li><a href="index.html">Homepage</a></li>
       <li><a href="sharkninja.html">SharkNinja</a></li>
@@ -39,5 +41,12 @@
     <p>Write your text here for the Homepage page. You can include bold, italics, lists, images, and embedded videos.</p>
 
   </main>
+
+  <script>
+  document.querySelector('.nav-toggle').onclick = () => {
+    document.querySelector('nav ul').classList.toggle('show');
+  };
+</script>
+
 </body>
 </html>

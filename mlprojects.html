@@ -7,11 +7,22 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <ul><li><a href="index.html">Homepage</a></li><li><a href="sharkninja.html">SharkNinja</a></li><li><a href="cornell.html">Cornell</a></li><li><a href="twitter.html">X</a></li><li><a href="ucsd.html">UC San Diego</a></li><li><a href="mit.html">MIT</a></li><li><a href="mlprojects.html">ML Projects</a></li><li><a href="personal.html">Personal</a></li></ul>
-    </nav>
-  </header>
+  <!-- Navigation Bar -->
+<header>
+  <nav>
+    <span class="nav-toggle">☰</span>
+    <ul>
+      <li><a href="index.html">Homepage</a></li>
+      <li><a href="sharkninja.html">SharkNinja</a></li>
+      <li><a href="cornell.html">Cornell</a></li>
+      <li><a href="twitter.html">X</a></li>
+      <li><a href="ucsd.html">UC San Diego</a></li>
+      <li><a href="mit.html">MIT</a></li>
+      <li><a href="mlprojects.html">ML Projects</a></li>
+      <li><a href="personal.html">Personal</a></li>
+    </ul>
+  </nav>
+</header>
   <main>
 
     <h1>Best Buy</h1>
@@ -74,6 +85,18 @@
       <li>Python scripting</li>
     </ul>
 
+        <h1>Senior Design Project</h1>
+
+        <h2>My contribution</h2>
+    <ul class="two-column">
+      <li>3 conferene talks, find ASBMR video. Marysol conference. K smith conference</li>
+      <li>Microscopy setup</li>
+      <li>Signal processing</li>
+      <li>Data visualization</li>
+      <li>Machine learning models</li>
+      <li>Python scripting</li>
+    </ul>
+
     <p>Write your text here for the ML Projects page. You can include bold, italics, lists, images, and embedded videos.</p>
 
     
@@ -105,5 +128,12 @@
 
 
   </main>
+
+  <script>
+  document.querySelector('.nav-toggle').onclick = () => {
+    document.querySelector('nav ul').classList.toggle('show');
+  };
+</script>
+
 </body>
 </html>
