@@ -1,204 +1,221 @@
-/* ----------------- */
-/* ===== 1. BODY ===== */
-/* ----------------- */
+/* ============================
+   HYBRID SITE CSS (CLEANED)
+   ============================ */
 
-body { 
-  font-family: Arial, sans-serif;
-  font-weight: 200;
-  font-size: 1.2em;       
-  margin: 40px auto;
-  max-width: 900px;
-  line-height: 1.6;
-  color: #3c3c3c;
-  padding: 75px 15px 0 15px;
+/* --------------------------
+   Theme variables (edit here)
+   -------------------------- */
+:root{
+  --max-body-width: 950px;       /* main readable column */
+  --page-padding: 20px;
+  --header-height: 62px;         /* fixed header height (used for body padding) */
+
+  /* Greyscale palette */
+  --bg: #ffffff;
+  --surface: #f7f8f9;            /* very light surface (cards, sections) */
+  --muted: #ededed;
+  --text: #2f3335;               /* main text */
+  --muted-text: #6b6f72;         /* secondary text */
+  --accent: #343638;             /* for header and strong elements */
+  --shadow: rgba(49,51,51,0.18); /* drop shadow color */
+  --skill-bubble: #eef0f1;       /* base bubble color */
+  --skill-bubble-2: #e3e6e7;     /* secondary tone */
 }
 
+/* --------------------------
+   1. GLOBAL LAYOUT / BODY
+   -------------------------- */
+* { box-sizing: border-box; }
 
+html,body{
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
 
-/* ------------------------- */
-/* --- 2. NAGIVATION BAR --- */
-/* ------------------------- */
+/* body content constrained in a centered column (hybrid) */
+.container {
+  max-width: var(--max-body-width);
+  margin: 0 auto;
+  padding: 0 calc(var(--page-padding));
+}
 
-/* ===== FIXED FULL-WIDTH HEADER ===== */
+/* ensure main content clears fixed header: reserve vertical space */
+body {
+  padding-top: calc(var(--header-height) + 12px); /* header + small gap so header shadow overlays banner */
+}
+
+/* --------------------------
+   2. NAVIGATION (fixed)
+   -------------------------- */
 header {
-  position: fixed; 
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 999;
-  background-color: #242626;
-  padding: 15px 0;
-
-  /* subtle depth shadow */
-  box-shadow: 0 3px 10px #5b5d5d;
+  height: var(--header-height);
+  z-index: 1200;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  box-shadow: 0 6px 18px var(--shadow);
 }
 
-/* ===== NAVIGATION LIST ===== */
+/* nav wrapper inside header, constrained to body width */
+header nav {
+  width: 100%;
+  max-width: var(--max-body-width);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* nav list */
 nav ul {
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  list-style: none !important; /* <-- removes dots */
+  gap: 18px;
   margin: 0;
   padding: 0;
+  list-style: none;
+  align-items: center;
 }
 
-nav ul,
-nav li {
-  list-style: none !important;
-  list-style-type: none !important;
-}
+/* ensure li does not show bullets in any browser */
+nav li, nav ul { list-style: none !important; }
 
-/* ===== NAVIGATION LINKS ===== */
+/* nav link "button" appearance */
 nav a {
-  color: #eee;
+  color: #fff;
   text-decoration: none;
-  font-weight: 500;
-
-  padding: 10px 14px;           /* the "button" area */
-  border-radius: 6px;           /* rounded edges */
-  transition: background-color 0.25s ease, color 0.25s ease;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 180ms ease, transform 180ms ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
-/* ===== HOVER EFFECT ===== */
-nav a:hover {
-  background-color: #0072b1;    /* change whole block color */
-  color: white;
+/* hover / active */
+nav a:hover,
+nav a:focus {
+  background: rgba(255,255,255,0.06);
+  transform: translateY(-1px);
+  outline: none;
 }
 
-/* ===== MOBILE NAVIGATION ===== */
-@media (max-width: 768px) {
+/* small-screen: hamburger toggle (JS should toggle .show on nav ul) */
+.nav-toggle { display: none; color: #fff; font-size: 22px; }
 
-  /* Stack items vertically */
-  nav ul {
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: #242626;
-    width: 100%;
-    padding: 10px 20px;
-    display: none; /* hidden until hamburger clicked */
-  }
+/* --------------------------
+   3. BANNER (full-bleed image)
+   -------------------------- */
 
-  nav ul.show {
-    display: flex; /* reveal when active */
-  }
-
-  /* Make navbar shorter */
-  header {
-    padding: 10px 0;
-  }
-
-  /* Hamburger button */
-  .nav-toggle {
-    display: block;
-    cursor: pointer;
-    color: #eee;
-    font-size: 26px;
-    padding: 5px 20px;
-  }
-}
-
-/* ===== DESKTOP: hide hamburger ===== */
-.nav-toggle {
-  display: none;
-}
-
-
-/* --------------------------- */
-/* ===== 3. BANNER IMAGE ===== */
-/* --------------------------- */
+/* full-bleed wrapper that breaks out of the centered container */
 .banner-image {
-  position: relative;
-  width: 100vw; 
-  margin-left: calc(50% - 50vw);  /* breaks out of body max-width */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);  /* break out of container */
   margin-right: calc(50% - 50vw);
-  overflow: hidden;               /* prevents horizontal scroll */
+  overflow: hidden;
+  position: relative;
+  /* subtle drop shadow to pop like navbar */
+  box-shadow: 0 8px 26px var(--shadow);
 }
 
+/* the actual <img> inside - do not upscale beyond native resolution */
 .banner-image img {
   width: 100%;
   height: auto;
   display: block;
-  max-width: 1920px;              /* prevents upscaling beyond native resolution */
-  margin: 0 auto;                 /* centers on ultrawide screens */
+  max-width: 1920px;      /* safe guard to prevent upscale */
+  margin: 0 auto;
+  object-fit: cover;
 }
 
+/* darker soft overlay so text (if any) would pop and to create 3D sense */
+.banner-image::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 0; bottom: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.06), rgba(0,0,0,0.12));
+  pointer-events: none;
+}
 
+/* Remove any gap between header and banner: pull banner up slightly so header shadow overlaps */
+.banner-image { margin-top: -8px; } /* small overlap so header shadow sits on image */
 
-/* ------------------ */
-/* --- 4. HEADER --- */
-/* ----------------- */
+/* --------------------------
+   4. PAGE HEADER (refined)
+   -------------------------- */
 
-/* ===== LEFT-HALF HEADER BLOCK ===== */
+/* page header now a subtle left-accent block that reads professional */
 .page-header {
   width: 100vw;
-  position: relative;
-  left: 50%;
-  margin-left: -50vw;     /* full-width breakout */
-
-  background: linear-gradient(
-    to right,
-    transparent 0%,       /* left 0–29% = white */
-    transparent 10%,      /* start blue at 30% */
-    #0072b1 10%,          /* blue begins */
-    #0072b1 50%,          /* blue ends at midpoint (50%) */
-    transparent 50%,      /* rest white */
-    transparent 100%
-  );
-
-  padding: 20px 0;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-left: calc(50% - 50vw); /* breakout */
+  margin-right: calc(50% - 50vw);
+  padding: 28px 0;
+  background: transparent;        /* neutral; accent is controlled by inner block */
 }
 
-/* ===== TEXT BLOCK (inside blue area) ===== */
-.header-inner {
-  width: 40vw;            /* fits inside the 30% → 50% band */
-  max-width: 600px;
-  margin-left: 10vw;      /* aligns text at the start of the blue zone */
-  padding-left: 2vw;
+/* inner left block with constrained width (text sits left half) */
+.page-header-inner {
+  max-width: var(--max-body-width);
+  margin: 0 auto;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
 }
 
-/* ===== MAIN TITLE ===== */
-.page-header h1 {
+/* left accent panel (only covers left portion, not whole page) */
+.page-header-accent {
+  background: linear-gradient(90deg, rgba(52,54,56,1) 0%, rgba(52,54,56,1) 46%, rgba(0,0,0,0) 100%);
+  width: 50%;                    /* occupies left half of viewport area visually */
+  padding: 24px 32px;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(16,20,24,0.07);
+}
+
+/* Title */
+.page-header-accent h1 {
   margin: 0;
-  font-size: 1.6em;
-  font-family: Arial, sans-serif;
-  font-weight: 300;
-  color: #ffffff;
-  line-height: 1.2;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.15;
 }
 
-.section-title {
-  color: #00304e;    /* change the color */
-  font-weight: 500;    /* optional */
-  margin-top: 15px;    /* optional spacing */
+/* On small screens, shrink/stack */
+@media (max-width: 900px) {
+  .page-header-accent { width: 100%; padding: 18px; border-radius: 6px; }
+  .page-header-inner { padding: 0 14px; }
+  .page-header-accent h1 { font-size: 1.3rem; }
 }
 
-/* ----------------------------- */
-/* --- 5. MEDIA: IMGS & VIDS --- */
-/* ----------------------------- */
+/* --------------------------
+   5. MEDIA: images & videos
+   -------------------------- */
 
-/* ---- FLEX LAYOUT FOR IMAGES + VIDEOS ---- */
+/* use flex layout but do not force 50/50 defaults — utilities decide sizes */
 .clearfix {
   display: flex;
-  justify-content: space-between;
+  gap: 0;
+  flex-wrap: wrap;
   align-items: stretch;
-  flex-wrap: wrap; /* allows wrapping if items don't fit horizontally */
-  gap: 0; /* no space between unless you want some */
 }
 
-/* Default: evenly split */
-.clearfix img,
-.clearfix .video-wrapper {
-  flex: 1 1 50%;
-  max-width: 50%;
-  margin: 0;
-  padding: 0;
-  height: auto;
-}
+/* default: let children size themselves; utilities override */
+.clearfix > * { flex: 0 0 auto; max-width: none; }
 
-/* Make image fill and crop nicely */
+/* responsive images inside media blocks */
 .clearfix img {
   width: 100%;
   height: 100%;
@@ -206,189 +223,135 @@ nav a:hover {
   display: block;
 }
 
-/* ---- VIDEO STYLING ---- */
-.video-crop {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;   /* crop edges instead of showing black bars */
-  object-position: center; /* crop equally from both sides (optional) */
-}
-
+/* video wrapper */
 .video-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16/9;
   overflow: hidden;
 }
-
+.video-wrapper video,
 .video-wrapper iframe {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
-  border: none;
+  object-fit: cover;
 }
 
-/* ---- CENTER ALIGN ---- */
-.align-center {
-  display: block;
-  margin: 30px auto;
-  width: 60%;
-  max-width: 500px;
-}
+/* Center aligned utilities */
+.align-center { display:block; margin: 28px auto; width: 70%; max-width: 700px; }
+.align-center img, .align-center iframe, .align-center video { width: 100%; height:auto; }
 
-.align-center iframe,
-.align-center img,
-.align-center video {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 6px;
-}
+/* --------------------------
+   6. WIDTH UTILITIES
+   -------------------------- */
+/* these are simple and strong enough to override defaults */
+.w-10 { flex: 0 0 10%; max-width:10%; }
+.w-20 { flex: 0 0 20%; max-width:20%; }
+.w-25 { flex: 0 0 25%; max-width:25%; }
+.w-30 { flex: 0 0 30%; max-width:30%; }
+.w-33 { flex: 0 0 33.333%; max-width:33.333%; }
+.w-40 { flex: 0 0 40%; max-width:40%; }
+.w-50 { flex: 0 0 50%; max-width:50%; }
+.w-60 { flex: 0 0 60%; max-width:60%; }
+.w-70 { flex: 0 0 70%; max-width:70%; }
+.w-100 { flex: 0 0 100%; max-width:100%; }
 
-/* -------------------------
-   WIDTH UTILITIES (stronger)
-   ------------------------- */
-/* Use these on the direct child elements inside .clearfix:
-   <img class="w-40"> or <div class="video-wrapper w-60"> */
-
-/* Higher-specificity selectors so they override the default 50% */
-.clearfix > .w-30,
-.clearfix > img.w-30,
-.clearfix > .video-wrapper.w-30 { flex: 0 0 30% !important; max-width: 30% !important; }
-
-.clearfix > .w-40,
-.clearfix > img.w-40,
-.clearfix > .video-wrapper.w-40 { flex: 0 0 40% !important; max-width: 40% !important; }
-
-.clearfix > .w-50,
-.clearfix > img.w-50,
-.clearfix > .video-wrapper.w-50 { flex: 0 0 50% !important; max-width: 50% !important; }
-
-.clearfix > .w-60,
-.clearfix > img.w-60,
-.clearfix > .video-wrapper.w-60 { flex: 0 0 60% !important; max-width: 60% !important; }
-
-.clearfix > .w-70,
-.clearfix > img.w-70,
-.clearfix > .video-wrapper.w-70 { flex: 0 0 70% !important; max-width: 70% !important; }
-
-/* Responsive: if screen is small, utilities should fall back to 100% */
+/* fallback stacking on small screens */
 @media (max-width: 768px) {
-  .clearfix > .w-30,
-  .clearfix > .w-40,
-  .clearfix > .w-50,
-  .clearfix > .w-60,
-  .clearfix > .w-70,
-  .clearfix > img[class*="w-"],
-  .clearfix > .video-wrapper[class*="w-"] {
-    flex: 1 1 100% !important;
-    max-width: 100% !important;
-  }
+  .clearfix { flex-direction: column; }
+  .clearfix > * { flex: 1 1 100% !important; max-width: 100% !important; }
 }
 
+/* --------------------------
+   7. SKILLS SECTION (neat + muted)
+   -------------------------- */
 
-/* Optional gap utility if you ever want spacing between items */
-.gap-small { gap: 10px; }
-.gap-medium { gap: 20px; }
-.gap-large { gap: 40px; }
-
-/* ---- VIDEO ---- */
-video {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* ---- RESPONSIVE STACKING ---- */
-@media (max-width: 768px) {
-  .clearfix {
-    flex-direction: column;
-  }
-  .clearfix img,
-  .clearfix .video-wrapper {
-    max-width: 100%;
-    flex: 1 1 100%;
-  }
-}
-
-/* ---- LIST STYLING ---- */
-ul.two-column {
-  columns: 2;
-  column-gap: 40px;
-}
-
-ul li {
-  margin-bottom: 10px;
-  list-style-type: disc;
-}
-
-
-/* --------------------------*/
-/* --- 6. SKILLS SECTION --- */
-/* --------------------------*/
-
-/* ===== FULL-WIDTH COLORED BACKGROUND ===== */
 .skills-section {
-  width: 100vw;                   /* span full screen width */
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;             /* pull background outward */
-  margin-right: -50vw;
-  background-color: #f2f5f5;      /* your custom color */
-  padding: 40px 0;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  background: var(--surface);
+  padding: 36px 0;
+  box-shadow: 0 6px 20px rgba(16,20,24,0.03);
 }
 
-/* ===== CENTERED INNER CONTENT ===== */
 .skills-container {
-  max-width: 800px;
-  margin: auto;
+  max-width: var(--max-body-width);
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: 100px 1fr; /* left column fixed, right flexible */
+  grid-template-columns: 110px 1fr;
+  gap: 18px;
   align-items: start;
-  gap: 20px;
-  padding: 0 20px; /* side padding */
+  padding: 0 18px;
 }
 
-/* ===== LEFT COLUMN TITLE ===== */
+/* heading styling */
 .skills-title h2 {
-  margin-left: 10px;
-  font-size: 2.2em;            /* font size */
-  font-weight: 400;           /*font weight */
-  color: #4e4f50;                 /* CHANGE FONT COLOR */
-  font-family: Arial, sans-serif; /* CHANGE FONT FAMILY */
+  margin: 0;
+  color: var(--muted-text);
+  font-weight: 500;
+  font-size: 1.6rem;
 }
 
-/* ===== RIGHT COLUMN SKILL TAGS ===== */
+/* tag grid */
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
+  align-items: center;
 }
 
+/* bubbles - softer, less heavy colors */
 .skill {
-  background: #727575;
-  color: #ffffff;
-  padding: 10px 12px;
-  border-radius: 20px;
-  font-size: 0.9em;
-  white-space: nowrap; /* optional: prevents awkward breaking in middle of a word */
+  background: var(--skill-bubble);
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 999px; /* pill */
+  font-size: 0.95rem;
+  box-shadow: 0 2px 6px rgba(16,20,24,0.04);
 }
 
-/* ===== MOBILE FRIENDLY STACKING =====*/
+/* a second tone utility for variety */
+.skill.alt { background: var(--skill-bubble-2); }
+
+/* mobile stacking */
 @media (max-width: 700px) {
-  .skills-container {
-    grid-template-columns: 1fr;  /* stack into one column */
-    text-align: center;          /* center text for better mobile appearance */
-  }
+  .skills-container { grid-template-columns: 1fr; text-align: center; }
+  .skills-title h2 { margin-bottom: 10px; text-align: center; }
+  .skills-grid { justify-content: center; }
+}
 
-  .skills-title h2 {
-    margin-bottom: 10px;         /* spacing between title and skills */
-  }
+/* --------------------------
+   8. TYPOGRAPHY HELPERS
+   -------------------------- */
+h1, h2, h3, h4, h5 { color: var(--text); margin: 0 0 10px 0; }
+p { margin: 0 0 14px 0; color: var(--muted-text); }
 
-  .skills-grid {
-    justify-content: center;     /* center skill bubbles on small screens */
-  }
-} 
+/* section title class */
+.section-title { color: var(--text); font-weight: 600; }
+
+/* small utility */
+.center { text-align: center; }
+
+/* --------------------------
+   9. NAV MOBILE BEHAVIOR (add minimal JS to toggle .open)
+   -------------------------- */
+@media (max-width: 768px) {
+  .nav-toggle { display: block; margin-left: 12px; }
+  nav ul { display: none; flex-direction: column; background: var(--accent); width: 100%; padding: 12px; border-radius: 6px; }
+  nav ul.open { display: flex; }
+  nav li { width: 100%; }
+  nav a { width: 100%; padding: 12px 14px; border-radius: 6px; }
+}
+
+/* --------------------------
+   10. MISC / CLEANUP
+   -------------------------- */
+ul.two-column { columns: 2; column-gap: 28px; }
+ul li { margin-bottom: 10px; }
+a { color: inherit; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* End of CSS */
