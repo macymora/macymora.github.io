@@ -2,65 +2,151 @@
    HYBRID SITE CSS (UPDATED)
    ============================ */
 
-/* --------------------------
-   Theme variables (edit here)
-   -------------------------- */
-:root{
-  --max-body-width: 950px;       
+/* =========================================================
+   0. THEME VARIABLES
+   (unchanged — keep your existing variables)
+   ========================================================= */
+:root {
+  --max-body-width: 1100px;
   --page-padding: 20px;
-  --header-height: 62px;         
+  --header-height: 62px;
 
   --bg: #ffffff;
-  --surface: #f7f8f9;            
+  --surface: #f7f8f9;
   --muted: #ededed;
-  --text: #2f3335;               
-  --muted-text: #6b6f72;         
-  --accent: #343638;             
-  --shadow: rgba(49,51,51,0.20); 
-  --skill-bubble: #eaeeee;       
-  --skill-bubble-2: #e2e3e4;     
-  --info-card-bg: #f4f6f7;       /* side blurb background */
-  --info-card-border: #d6d8da;   /* subtle border */
+  --text: #2f3335;
+  --muted-text: #6b6f72;
+  --accent: #343638;
+  --shadow: rgba(49,51,51,0.20);
+  --skill-bubble: #eaeeee;
+  --skill-bubble-2: #e2e3e4;
+  --info-card-bg: #f4f6f7;
+  --info-card-border: #d6d8da;
 }
 
-/* --------------------------
-   1. GLOBAL LAYOUT / BODY
-   -------------------------- */
-* { box-sizing: border-box; }
 
-html,body{
-  height: 100%;
+/* =========================================================
+   1. GLOBAL RESET / BODY NORMALIZATION
+   ========================================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
   background: var(--bg);
   color: var(--text);
   font-family: Arial, sans-serif;
   font-size: 20px;
   line-height: 1.6;
-  margin: 0;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  overflow-x: hidden;  /* prevent horizontal scroll */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* no horizontal scroll */
 }
 
+
+/* =========================================================
+   2. GLOBAL LAYOUT CONTAINER (content constraints only)
+   ========================================================= */
 .container {
   max-width: var(--max-body-width);
   margin: 0 auto;
-  padding: 0 calc(var(--page-padding) + 8px); /* extra padding to prevent cut-off */
+  padding-left: var(--page-padding);
+  padding-right: var(--page-padding);
 }
 
-body {
-  padding-top: calc(var(--header-height) + 12px); 
-  /* padding-left: var(--page-padding);
-  padding-right: var(--page-padding); */
-  max-width: 1000px;      /* max readable width */
-  margin: 0 auto;         /* center horizontally */
-  padding: 0 16px;        /* optional: inner padding for edges */
+
+/* =========================================================
+   3. FULL-WIDTH BANNER (always edge-to-edge)
+   ========================================================= */
+.banner-image {
+  width: 100vw;
+  position: relative;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  overflow: hidden;
+  box-shadow: 0 12px 40px var(--shadow);
+  margin-top: -8px;
 }
 
-body, main {
-  max-width: 1100px;      /* max readable width */
-  width: 95vw;            /* 90% of viewport width */
-  margin: 0 auto;         /* center horizontally */
-  padding: 0 16px;        /* optional: inner padding for edges */
+.banner-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 1920px;
+  margin: 0 auto;
+  object-fit: cover;
+}
+
+.banner-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.06), rgba(0,0,0,0.12));
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   4. FULL-WIDTH PAGE HEADER (Option B + D)
+   ========================================================= */
+.page-header {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 24px 0 8px 0;
+  position: relative;
+}
+
+/* inner content constrained */
+.page-header-inner {
+  max-width: var(--max-body-width);
+  margin: 0 auto;
+  padding: 0 var(--page-padding);
+  display: flex;
+  align-items: center;
+}
+
+/* left vertical accent bar */
+.page-header-inner::before {
+  content: "";
+  width: 6px;
+  height: 100%;
+  background: var(--accent);
+  display: block;
+  margin-right: 12px;
+  border-radius: 3px;
+}
+
+.page-header-inner h1 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--text);
+  margin: 0;
+}
+
+/* underline across full width */
+.page-header::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: var(--accent);
+  margin-top: 8px;
+}
+
+/* mobile header scaling */
+@media (max-width: 900px) {
+  .page-header-inner h1 {
+    font-size: 1.4rem;
+  }
+  .page-header-inner::before {
+    width: 4px;
+    margin-right: 8px;
+  }
 }
 
 /* --------------------------
@@ -120,88 +206,6 @@ nav a:focus {
 }
 
 .nav-toggle { display: none; color: #fff; font-size: 22px; }
-
-/* --------------------------
-   3. BANNER (full-bleed image)
-   -------------------------- */
-.banner-image {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-  overflow: hidden;
-  position: relative;
-  box-shadow: 0 12px 40px rgba(49,51,51,0.25);
-}
-
-.banner-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-  max-width: 1920px;
-  margin: 0 auto;
-  object-fit: cover;
-}
-
-.banner-image::after {
-  content: "";
-  position: absolute;
-  left: 0; right: 0; top: 0; bottom: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.06), rgba(0,0,0,0.12));
-  pointer-events: none;
-}
-
-.banner-image { margin-top: -8px; }
-
-/* --------------------------
-   4. PAGE HEADER (Option B+D)
-   -------------------------- */
-.page-header {
-  width: 100%;
-  padding: 24px 0 8px 0;  /* bottom padding for underline */
-  position: relative;
-}
-
-.page-header-inner {
-  max-width: var(--max-body-width);
-  margin: 0 auto;
-  padding: 0 18px;
-  display: flex;
-  align-items: center;
-}
-
-/* left vertical accent */
-.page-header-inner::before {
-  content: "";
-  width: 6px;
-  height: 100%;
-  background: var(--accent);
-  display: block;
-  margin-right: 12px;
-  border-radius: 3px;
-}
-
-/* main H1 */
-.page-header-inner h1 {
-  font-size: 1.8rem;
-  font-weight: 500;
-  color: var(--text);
-  margin: 0;
-}
-
-/* full-width underline */
-.page-header::after {
-  content: "";
-  display: block;
-  height: 4px;
-  width: 100%;
-  background: var(--accent);
-  margin-top: 8px;
-}
-
-@media (max-width: 900px) {
-  .page-header-inner h1 { font-size: 1.4rem; }
-  .page-header-inner::before { width: 4px; margin-right: 8px; }
-}
 
 /* --------------------------
    5. MEDIA: images & videos
