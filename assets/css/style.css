@@ -17,8 +17,8 @@
   --muted-text: #6b6f72;         
   --accent: #343638;             
   --shadow: rgba(49,51,51,0.20); 
-  --skill-bubble: #cccece;       
-  --skill-bubble-2: #cccecf;     
+  --skill-bubble: #eaeeee;       
+  --skill-bubble-2: #e2e3e4;     
   --info-card-bg: #f4f6f7;       /* side blurb background */
   --info-card-border: #d6d8da;   /* subtle border */
 }
@@ -33,7 +33,7 @@ html,body{
   background: var(--bg);
   color: var(--text);
   font-family: Arial, sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.6;
   margin: 0;
   -webkit-font-smoothing:antialiased;
@@ -49,8 +49,16 @@ html,body{
 
 body {
   padding-top: calc(var(--header-height) + 12px); 
-  padding-left: var(--page-padding);
-  padding-right: var(--page-padding);
+  /* padding-left: var(--page-padding);
+  padding-right: var(--page-padding); */
+  max-width: 1000px;      /* max readable width */
+  width: 90vw;            /* 90% of viewport width */
+  margin: 0 auto;         /* center horizontally */
+  padding: 0 16px;        /* optional: inner padding for edges */
+}
+
+body, main {
+
 }
 
 /* --------------------------
@@ -312,6 +320,7 @@ nav a:focus {
   border-radius: 8px;
   box-shadow: 0 6px 20px rgba(16,20,24,0.15);
   max-width: 500px;
+  font-size: 0.875rem;
   color: var(--text);
 }
 
@@ -331,13 +340,6 @@ nav a:focus {
   display: flex;
   flex-direction: column;
   gap: 18px;
-}
-
-.info-card {
-  background: #f7f8f9;
-  padding: 18px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 .info-card h3 {
