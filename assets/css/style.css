@@ -336,11 +336,9 @@ nav a:focus {
   display: flex;
   gap: 32px;        
   align-items: flex-start;
-
-  /* NEW: matches your body width + margin alignment */
   max-width: var(--max-body-width);
   margin: 0 auto 40px auto;
-  padding: 0 var(--page-padding);
+  /* padding: 0 var(--page-padding); */
 }
 
 
