@@ -69,7 +69,7 @@ html, body {
   margin-right: calc(50% - 50vw);
   overflow: hidden;
   box-shadow: 0 12px 40px var(--shadow);
-  margin-top: -2px;
+  margin-top: 0;
 }
 
 .banner-image img {
