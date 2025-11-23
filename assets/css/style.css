@@ -1,25 +1,26 @@
 /* ============================
-   HYBRID SITE CSS (CLEANED)
+   HYBRID SITE CSS (UPDATED)
    ============================ */
 
 /* --------------------------
    Theme variables (edit here)
    -------------------------- */
 :root{
-  --max-body-width: 950px;       /* main readable column */
+  --max-body-width: 950px;       
   --page-padding: 20px;
-  --header-height: 62px;         /* fixed header height (used for body padding) */
+  --header-height: 62px;         
 
-  /* Greyscale palette */
   --bg: #ffffff;
-  --surface: #f7f8f9;            /* very light surface (cards, sections) */
+  --surface: #f7f8f9;            
   --muted: #ededed;
-  --text: #2f3335;               /* main text */
-  --muted-text: #6b6f72;         /* secondary text */
-  --accent: #343638;             /* for header and strong elements */
-  --shadow: rgba(49,51,51,0.18); /* drop shadow color */
-  --skill-bubble: #eef0f1;       /* base bubble color */
-  --skill-bubble-2: #e3e6e7;     /* secondary tone */
+  --text: #2f3335;               
+  --muted-text: #6b6f72;         
+  --accent: #343638;             
+  --shadow: rgba(49,51,51,0.18); 
+  --skill-bubble: #eef0f1;       
+  --skill-bubble-2: #e3e6e7;     
+  --info-card-bg: #f4f6f7;       /* side blurb background */
+  --info-card-border: #d6d8da;   /* subtle border */
 }
 
 /* --------------------------
@@ -37,18 +38,19 @@ html,body{
   margin: 0;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
+  overflow-x: hidden;  /* prevent horizontal scroll */
 }
 
-/* body content constrained in a centered column (hybrid) */
 .container {
   max-width: var(--max-body-width);
   margin: 0 auto;
-  padding: 0 calc(var(--page-padding));
+  padding: 0 calc(var(--page-padding) + 8px); /* extra padding to prevent cut-off */
 }
 
-/* ensure main content clears fixed header: reserve vertical space */
 body {
-  padding-top: calc(var(--header-height) + 12px); /* header + small gap so header shadow overlays banner */
+  padding-top: calc(var(--header-height) + 12px); 
+  padding-left: var(--page-padding);
+  padding-right: var(--page-padding);
 }
 
 /* --------------------------
@@ -69,7 +71,6 @@ header {
   box-shadow: 0 6px 18px var(--shadow);
 }
 
-/* nav wrapper inside header, constrained to body width */
 header nav {
   width: 100%;
   max-width: var(--max-body-width);
@@ -78,7 +79,6 @@ header nav {
   justify-content: center;
 }
 
-/* nav list */
 nav ul {
   display: flex;
   gap: 18px;
@@ -88,10 +88,8 @@ nav ul {
   align-items: center;
 }
 
-/* ensure li does not show bullets in any browser */
 nav li, nav ul { list-style: none !important; }
 
-/* nav link "button" appearance */
 nav a {
   color: #fff;
   text-decoration: none;
@@ -104,7 +102,6 @@ nav a {
   gap: 8px;
 }
 
-/* hover / active */
 nav a:hover,
 nav a:focus {
   background: rgba(255,255,255,0.06);
@@ -112,35 +109,29 @@ nav a:focus {
   outline: none;
 }
 
-/* small-screen: hamburger toggle (JS should toggle .show on nav ul) */
 .nav-toggle { display: none; color: #fff; font-size: 22px; }
 
 /* --------------------------
    3. BANNER (full-bleed image)
    -------------------------- */
-
-/* full-bleed wrapper that breaks out of the centered container */
 .banner-image {
   width: 100vw;
-  margin-left: calc(50% - 50vw);  /* break out of container */
+  margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   overflow: hidden;
   position: relative;
-  /* subtle drop shadow to pop like navbar */
   box-shadow: 0 8px 26px var(--shadow);
 }
 
-/* the actual <img> inside - do not upscale beyond native resolution */
 .banner-image img {
   width: 100%;
   height: auto;
   display: block;
-  max-width: 1920px;      /* safe guard to prevent upscale */
+  max-width: 1920px;
   margin: 0 auto;
   object-fit: cover;
 }
 
-/* darker soft overlay so text (if any) would pop and to create 3D sense */
 .banner-image::after {
   content: "";
   position: absolute;
@@ -149,23 +140,17 @@ nav a:focus {
   pointer-events: none;
 }
 
-/* Remove any gap between header and banner: pull banner up slightly so header shadow overlaps */
-.banner-image { margin-top: -8px; } /* small overlap so header shadow sits on image */
+.banner-image { margin-top: -8px; }
 
 /* --------------------------
-   4. PAGE HEADER (refined)
+   4. PAGE HEADER (Option B+D)
    -------------------------- */
-
-/* page header now a subtle left-accent block that reads professional */
 .page-header {
-  width: 100vw;
-  margin-left: calc(50% - 50vw); /* breakout */
-  margin-right: calc(50% - 50vw);
-  padding: 28px 0;
-  background: transparent;        /* neutral; accent is controlled by inner block */
+  width: 100%;
+  padding: 24px 0 8px 0;  /* bottom padding for underline */
+  position: relative;
 }
 
-/* inner left block with constrained width (text sits left half) */
 .page-header-inner {
   max-width: var(--max-body-width);
   margin: 0 auto;
@@ -174,37 +159,43 @@ nav a:focus {
   align-items: center;
 }
 
-/* left accent panel (only covers left portion, not whole page) */
-.page-header-accent {
-  background: linear-gradient(90deg, rgba(52,54,56,1) 0%, rgba(52,54,56,1) 46%, rgba(0,0,0,0) 100%);
-  width: 50%;                    /* occupies left half of viewport area visually */
-  padding: 24px 32px;
-  color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 6px 20px rgba(16,20,24,0.07);
+/* left vertical accent */
+.page-header-inner::before {
+  content: "";
+  width: 6px;
+  height: 100%;
+  background: var(--accent);
+  display: block;
+  margin-right: 12px;
+  border-radius: 3px;
 }
 
-/* Title */
-.page-header-accent h1 {
+/* main H1 */
+.page-header-inner h1 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--text);
   margin: 0;
-  font-size: 1.6rem;
-  font-weight: 400;
-  color: #fff;
-  line-height: 1.15;
 }
 
-/* On small screens, shrink/stack */
+/* full-width underline */
+.page-header::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: var(--accent);
+  margin-top: 8px;
+}
+
 @media (max-width: 900px) {
-  .page-header-accent { width: 100%; padding: 18px; border-radius: 6px; }
-  .page-header-inner { padding: 0 14px; }
-  .page-header-accent h1 { font-size: 1.3rem; }
+  .page-header-inner h1 { font-size: 1.4rem; }
+  .page-header-inner::before { width: 4px; margin-right: 8px; }
 }
 
 /* --------------------------
    5. MEDIA: images & videos
    -------------------------- */
-
-/* use flex layout but do not force 50/50 defaults — utilities decide sizes */
 .clearfix {
   display: flex;
   gap: 0;
@@ -212,10 +203,8 @@ nav a:focus {
   align-items: stretch;
 }
 
-/* default: let children size themselves; utilities override */
 .clearfix > * { flex: 0 0 auto; max-width: none; }
 
-/* responsive images inside media blocks */
 .clearfix img {
   width: 100%;
   height: 100%;
@@ -223,7 +212,6 @@ nav a:focus {
   display: block;
 }
 
-/* video wrapper */
 .video-wrapper {
   position: relative;
   width: 100%;
@@ -239,14 +227,12 @@ nav a:focus {
   object-fit: cover;
 }
 
-/* Center aligned utilities */
 .align-center { display:block; margin: 28px auto; width: 70%; max-width: 700px; }
 .align-center img, .align-center iframe, .align-center video { width: 100%; height:auto; }
 
 /* --------------------------
    6. WIDTH UTILITIES
    -------------------------- */
-/* these are simple and strong enough to override defaults */
 .w-10 { flex: 0 0 10%; max-width:10%; }
 .w-20 { flex: 0 0 20%; max-width:20%; }
 .w-25 { flex: 0 0 25%; max-width:25%; }
@@ -258,20 +244,16 @@ nav a:focus {
 .w-70 { flex: 0 0 70%; max-width:70%; }
 .w-100 { flex: 0 0 100%; max-width:100%; }
 
-/* fallback stacking on small screens */
 @media (max-width: 768px) {
   .clearfix { flex-direction: column; }
   .clearfix > * { flex: 1 1 100% !important; max-width: 100% !important; }
 }
 
 /* --------------------------
-   7. SKILLS SECTION (neat + muted)
+   7. SKILLS SECTION
    -------------------------- */
-
 .skills-section {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
+  width: 100%;
   background: var(--surface);
   padding: 36px 0;
   box-shadow: 0 6px 20px rgba(16,20,24,0.03);
@@ -287,7 +269,6 @@ nav a:focus {
   padding: 0 18px;
 }
 
-/* heading styling */
 .skills-title h2 {
   margin: 0;
   color: var(--muted-text);
@@ -295,7 +276,6 @@ nav a:focus {
   font-size: 1.6rem;
 }
 
-/* tag grid */
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
@@ -303,20 +283,17 @@ nav a:focus {
   align-items: center;
 }
 
-/* bubbles - softer, less heavy colors */
 .skill {
   background: var(--skill-bubble);
   color: var(--text);
   padding: 8px 12px;
-  border-radius: 999px; /* pill */
+  border-radius: 999px; 
   font-size: 0.95rem;
   box-shadow: 0 2px 6px rgba(16,20,24,0.04);
 }
 
-/* a second tone utility for variety */
 .skill.alt { background: var(--skill-bubble-2); }
 
-/* mobile stacking */
 @media (max-width: 700px) {
   .skills-container { grid-template-columns: 1fr; text-align: center; }
   .skills-title h2 { margin-bottom: 10px; text-align: center; }
@@ -324,19 +301,29 @@ nav a:focus {
 }
 
 /* --------------------------
-   8. TYPOGRAPHY HELPERS
+   8. INFO CARDS / SIDE BLURBS
+   -------------------------- */
+.info-card {
+  background: var(--info-card-bg);
+  border: 1px solid var(--info-card-border);
+  padding: 12px 16px;
+  margin: 12px 0;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(16,20,24,0.05);
+  max-width: 280px;
+  color: var(--text);
+}
+
+/* --------------------------
+   9. TYPOGRAPHY HELPERS
    -------------------------- */
 h1, h2, h3, h4, h5 { color: var(--text); margin: 0 0 10px 0; }
 p { margin: 0 0 14px 0; color: var(--muted-text); }
-
-/* section title class */
 .section-title { color: var(--text); font-weight: 600; }
-
-/* small utility */
 .center { text-align: center; }
 
 /* --------------------------
-   9. NAV MOBILE BEHAVIOR (add minimal JS to toggle .open)
+   10. NAV MOBILE BEHAVIOR
    -------------------------- */
 @media (max-width: 768px) {
   .nav-toggle { display: block; margin-left: 12px; }
@@ -347,11 +334,9 @@ p { margin: 0 0 14px 0; color: var(--muted-text); }
 }
 
 /* --------------------------
-   10. MISC / CLEANUP
+   11. MISC / CLEANUP
    -------------------------- */
 ul.two-column { columns: 2; column-gap: 28px; }
 ul li { margin-bottom: 10px; }
 a { color: inherit; }
 img { max-width: 100%; height: auto; display: block; }
-
-/* End of CSS */
