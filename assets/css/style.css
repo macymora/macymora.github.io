@@ -345,13 +345,13 @@ nav a:focus {
 /* ---- CONTENT LEFT (moved inward, no more extreme-left alignment) ---- */
 .content-left {
   flex: 1;
-  max-width: 65%;
+  max-width: 60%;
 }
 
 
 /* ---- CONTENT RIGHT (cards) ---- */
 .content-right {
-  flex: 0 0 30%;
+  flex: 0 0 35%;
   display: flex;
   flex-direction: column;
   gap: 18px;
