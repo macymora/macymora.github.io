@@ -215,6 +215,11 @@ nav a:focus {
   gap: 0;
   flex-wrap: wrap;
   align-items: stretch;
+
+  /* NEW — makes media centered & not full-bleed */
+  max-width: var(--max-body-width); /* or 1000px */
+  margin: 0 auto;
+  padding: 0 var(--page-padding);   /* gives side spacing */
 }
 
 .clearfix > * { flex: 0 0 auto; max-width: none; }
