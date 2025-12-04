@@ -24,34 +24,49 @@
 </header>
   <main>
 
+      <!-- ========================================================= -->
+  <!-- FULL-WIDTH BANNER -->
+  <!-- ========================================================= -->
   <div class="banner-image">
     <img src="images/Slide1.PNG" alt="gesiel">
-  </div> 
-
- <!-- Heart Disease-->
-    <section class="project-intro">
-<div class="page-header">
-  <div class="header-inner">
-    <h1>1. Cardiac Growth & Vascular Inflammation</h1>
   </div>
-</div>
+
+
+  <!-- ========================================================= -->
+  <!-- SECTION 1 — CARDIOVASCULAR -->
+  <!-- ========================================================= -->
+  <section class="project-intro">
+
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+      <div class="page-header-inner">
+        <h1>Cardiac Growth & Vascular Inflammation</h1>
+      </div>
+    </div>
+
+    <!-- MEDIA: IMAGE + VIDEO -->
+    <div class="clearfix">
+  <img src="images/cardiomyocyte.png" alt="cardiomyocyte" class="w-50">
+  <img src="images/stretch.png" alt="stretch" class="w-50">
+    </div>
+
+  </section>
+
+
+  <hr>
 
   <p class="summary">
     Worked at the intersection of stem-cell engineering, inflammation biology, and biomechanics to generate 
     high-quality experimental datasets for understanding heart-cell development and early drivers of cardiovascular disease.
   </p>
 
-  <!-- Media section: optional poster and embedded talk -->
-  <div class="clearfix">
-  <img src="images/cardiomyocyte.png" alt="cardiomyocyte" class="w-50">
-  <img src="images/stretch.png" alt="stretch" class="w-50">
-  </div>
-
-</section>
-
-<hr>
-
-<section class="project-content">
+  <!-- ========================================================= -->
+  <!-- LEFT SECTION CONTENT -->
+  <!-- ========================================================= -->
+  <section class="project-content">
+  <div class="content-wrapper">
+    <!-- LEFT COLUMN -->
+    <div class="content-left">
   <h2 class="section-title">🔹 Research Objectives & Contributions</h2>
   <ul>
     <li>Developed a silicone-based mechanical stretch platform to simulate the motion of a beating heart and study how physical forces influence stem-cell differentiation into cardiomyocytes, producing structured datasets linking mechanical stimulation with cell response. </li>
@@ -69,54 +84,67 @@
     <li> Disease Modeling: Simulated early stages of atherosclerosis using lipid-treated cells</li>
   </ul>
 
-  <h2 class="section-title">🏅 Awards & Recognition</h2>
-  <ul>
-    <li>NIH IMSD Scholar (Initiative for Maximizing Student Development)</li>
-    <li>Chancellor's Research Excellence Scholar</li>
-    <li>UC LEADS Scholar (did not accept this offer to pursue other opportunities)</li>
-    <li>ABRCMS Travel Award </li>
-    <li>MolES Travel Award</li>
-    <li>Tau Beta Pi Engineering Honor Society</li>
-    <li>NACME Scholarship (National Action Council for Minorities in Engineering )</li>
-    <li>Butte Creek Foundation Scholarship</li>
-  </ul>
-
-<!-- FULL-WIDTH SKILLS SECTION -->
-<section class="skills-section">
-  <div class="skills-container">
-    
-    <!-- LEFT COLUMN -->
-    <div class="skills-title">
-      <h2>Skills</h2>
+      <h2 class="section-title">Leadership Highlights</h2>
+      <ul>
+        <li>Designed and executed mechanical testing workflows.</li>
+        <li>Performed imaging-based microstructural analysis of bone.</li>
+        <li>Built data pipelines for multi-omic + mechanical datasets.</li>
+      </ul>
     </div>
 
-    <!-- RIGHT COLUMN -->
-    <div class="skills-grid">
+      <!-- ========================================================= -->
+  <!-- RIGHT SECTION CONTENT -->
+  <!-- ========================================================= -->
+
+      <!-- RIGHT COLUMN -->
+    <div class="content-right">
+      <div class="info-card">
+        <h3>Skills</h3>
+        <div class="skills-grid" style="flex-wrap:wrap; gap:6px;">
       <span class="skill">Experimental Design</span>
       <span class="skill">Quantitative Imaging</span>
       <span class="skill">Biomechanical Modeling</span>
       <span class="skill">Stem Cell Culture</span>
       <span class="skill">Wet Lab</span>
       <span class="skill">Molecular Assays</span>
-    </div>
+        </div>
+      </div>
 
-  </div>
-</section>
-
-
-<!-- PUBLICATIONS -->
-  <h2 class="section-title">🔗 Publications & Links</h2>
+      <div class="info-card">
+        <h3>Publications & Links</h3>
   <ul>
     <li>🧾 <a href="pdfs/ABRCMS2017_poster.pdf">ABRCMS presentation</a></li>
     <li>🧾 <a href="pdfs/SACNAS2017_poster.pdf">SACNAS presentation</a></li>
     <li>🧾 <a href="pdfs/ABRCMS2017_poster.pdf">MolES University of Washington-Seattle presentation</a></li>
     <li>🧾 <a href="pdfs/SACNAS2017_poster.pdf">Chancellors Research Excellence Symposium presentation</a></li>
   </ul>
+      </div>
+
+    <div class="info-card">
+      <h3>Awards</h3>
+      <ul>
+    <li>🏅NIH IMSD Scholar (Initiative for Maximizing Student Development)</li>
+    <li>🏅Chancellor's Research Excellence Scholar</li>
+    <li>🏅UC LEADS Scholar (did not accept this offer to pursue other opportunities)</li>
+    <li>ABRCMS Travel Award </li>
+    <li>MolES Travel Award</li>
+    <li>Tau Beta Pi Engineering Honor Society</li>
+    <li>NACME Scholarship (National Action Council for Minorities in Engineering )</li>
+    <li>Butte Creek Foundation Scholarship</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
+</main>
+
+
+<!-- ========================================================= -->
+<!-- MOBILE NAV SCRIPT -->
+<!-- ========================================================= -->
 <script>
   document.querySelector('.nav-toggle').onclick = () => {
-    document.querySelector('nav ul').classList.toggle('show');
+    document.querySelector('nav ul').classList.toggle('open');
   };
 </script>
 
