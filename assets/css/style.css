@@ -1,10 +1,5 @@
-/* ============================
-   HYBRID SITE CSS (UPDATED)
-   ============================ */
-
 /* =========================================================
    0. THEME VARIABLES
-   (unchanged — keep your existing variables)
    ========================================================= */
 :root {
   --max-body-width: 1300px;
@@ -26,11 +21,9 @@
 
 
 /* =========================================================
-   1. GLOBAL RESET / BODY NORMALIZATION
+   1. GLOBAL RESET
    ========================================================= */
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
@@ -43,41 +36,37 @@ html, body {
   font-size: 20px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden; /* no horizontal scroll */
+  overflow-x: hidden;
 }
 
 
 /* =========================================================
-   2. GLOBAL LAYOUT CONTAINER (content constraints only)
+   2. CONTAINER
    ========================================================= */
 .container {
   max-width: var(--max-body-width);
   margin: 0 auto;
-  padding-left: var(--page-padding);
-  padding-right: var(--page-padding);
+  padding: 0 var(--page-padding);
 }
 
 
 /* =========================================================
-   3. FULL-WIDTH BANNER (always edge-to-edge)
+   3. FULL-WIDTH BANNER
    ========================================================= */
 .banner-image {
-  width: 100vw;
+  width: 100%;
   position: relative;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
   overflow: hidden;
   box-shadow: 0 12px 40px var(--shadow);
-  margin-top: 0;
+
+  /* prevents iOS zoom jitter */
+  margin: 0 calc(50% - 50vw);
 }
 
 .banner-image img {
   width: 100%;
   height: auto;
   display: block;
-  max-width: 1920px;
-  margin: 0 auto;
   object-fit: cover;
 }
 
@@ -91,35 +80,30 @@ html, body {
 
 
 /* =========================================================
-   4. FULL-WIDTH PAGE HEADER (Option B + D)
+   4. PAGE HEADER (full-width underline design)
    ========================================================= */
 .page-header {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-  padding: 24px 0 8px 0;
+  margin: 0 calc(50% - 50vw);
+  padding: 24px 0 8px;
+  width: 100%;
   position: relative;
 }
 
-/* inner content constrained */
 .page-header-inner {
   max-width: var(--max-body-width);
   margin: 0 auto;
   padding: 0 var(--page-padding);
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: center;   /* CENTER THE HEADER TEXT */
 }
-
 
 .page-header-inner h1 {
   font-size: 1.8rem;
   font-weight: 700;
-  color: var(--text);
   margin: 0;
 }
 
-/* underline across full width */
 .page-header::after {
   content: "";
   display: block;
@@ -129,38 +113,34 @@ html, body {
   margin-top: 8px;
 }
 
-/* mobile header scaling */
 @media (max-width: 900px) {
   .page-header-inner h1 {
     font-size: 1.4rem;
   }
-  .page-header-inner::before {
-    width: 4px;
-    margin-right: 8px;
-  }
 }
 
-/* --------------------------
-   2. NAVIGATION (fixed)
-   -------------------------- */
+
+/* =========================================================
+   5. NAVIGATION (fixed)
+   ========================================================= */
 header {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  inset: 0 0 auto;
   height: var(--header-height);
   z-index: 1200;
+
   background: var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 12px;
   box-shadow: 0 6px 18px var(--shadow);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 12px;
 }
 
 header nav {
-  width: 100%;
   max-width: var(--max-body-width);
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -169,65 +149,84 @@ header nav {
 nav ul {
   display: flex;
   gap: 18px;
-  margin: 0;
-  padding: 0;
   list-style: none;
-  align-items: center;
+  padding: 0;
+  margin: 0;
 }
-
-nav li, nav ul { list-style: none !important; }
 
 nav a {
   color: #fff;
   text-decoration: none;
-  font-weight: 600;
   padding: 8px 12px;
+  font-weight: 600;
   border-radius: 6px;
-  transition: background-color 180ms ease, transform 180ms ease;
   display: inline-flex;
-  align-items: center;
   gap: 8px;
+
+  transition: background-color .18s ease, transform .18s ease;
 }
 
 nav a:hover,
 nav a:focus {
   background: rgba(255,255,255,0.06);
   transform: translateY(-1px);
-  outline: none;
 }
 
-.nav-toggle { display: none; color: #fff; font-size: 22px; }
+.nav-toggle {
+  display: none;
+  color: #fff;
+  font-size: 22px;
+}
 
-/* --------------------------
-   5. MEDIA: images & videos
-   -------------------------- */
+/* Mobile nav */
+@media (max-width: 768px) {
+  .nav-toggle { display: block; margin-right: auto; }
+
+  nav ul {
+    display: none;
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+
+    padding: 16px;
+    background: var(--accent);
+    border-radius: 0 0 6px 6px;
+  }
+
+  nav ul.open { display: flex; }
+
+  nav li, nav a { width: 100%; }
+}
+
+
+/* =========================================================
+   6. MEDIA WRAPPER
+   ========================================================= */
 .clearfix {
   display: flex;
-  gap: 0;
   flex-wrap: wrap;
-  align-items: stretch;
+  gap: 0;
 
-  /* NEW — makes media centered & not full-bleed */
-  max-width: var(--max-body-width); /* or 1000px */
+  max-width: var(--max-body-width);
   margin: 0 auto;
-  padding: 0 var(--page-padding);   /* gives side spacing */
+  padding: 0 var(--page-padding);
 }
-
-.clearfix > * { flex: 0 0 auto; max-width: none; }
 
 .clearfix img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
+  object-fit: cover;
 }
 
 .video-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 16/9;
-  overflow: hidden;
+  aspect-ratio: 16 / 9;
 }
+
 .video-wrapper video,
 .video-wrapper iframe {
   position: absolute;
@@ -237,31 +236,37 @@ nav a:focus {
   object-fit: cover;
 }
 
-.align-center { display:block; margin: 28px auto; width: 70%; max-width: 700px; }
-.align-center img, .align-center iframe, .align-center video { width: 100%; height:auto; }
-
-/* --------------------------
-   6. WIDTH UTILITIES
-   -------------------------- */
-.w-10 { flex: 0 0 10%; max-width:10%; }
-.w-20 { flex: 0 0 20%; max-width:20%; }
-.w-25 { flex: 0 0 25%; max-width:25%; }
-.w-30 { flex: 0 0 30%; max-width:30%; }
-.w-33 { flex: 0 0 33.333%; max-width:33.333%; }
-.w-40 { flex: 0 0 40%; max-width:40%; }
-.w-50 { flex: 0 0 50%; max-width:50%; }
-.w-60 { flex: 0 0 60%; max-width:60%; }
-.w-70 { flex: 0 0 70%; max-width:70%; }
-.w-100 { flex: 0 0 100%; max-width:100%; }
-
 @media (max-width: 768px) {
   .clearfix { flex-direction: column; }
-  .clearfix > * { flex: 1 1 100% !important; max-width: 100% !important; }
 }
 
-/* --------------------------
-   7. SKILLS SECTION
-   -------------------------- */
+
+/* =========================================================
+   7. WIDTH UTILITIES
+   ========================================================= */
+.w-10 { flex: 0 0 10%; max-width: 10%; }
+.w-20 { flex: 0 0 20%; max-width: 20%; }
+.w-25 { flex: 0 0 25%; max-width: 25%; }
+.w-30 { flex: 0 0 30%; max-width: 30%; }
+.w-33 { flex: 0 0 33.333%; max-width: 33.333%; }
+.w-40 { flex: 0 0 40%; max-width: 40%; }
+.w-50 { flex: 0 0 50%; max-width: 50%; }
+.w-60 { flex: 0 0 60%; max-width: 60%; }
+.w-70 { flex: 0 0 70%; max-width: 70%; }
+.w-100 { flex: 0 0 100%; max-width: 100%; }
+
+@media (max-width: 768px) {
+  .w-10, .w-20, .w-25, .w-30, .w-33, .w-40,
+  .w-50, .w-60, .w-70, .w-100 {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+
+/* =========================================================
+   8. SKILLS SECTION
+   ========================================================= */
 .skills-section {
   width: 100%;
   background: var(--surface);
@@ -272,10 +277,10 @@ nav a:focus {
 .skills-container {
   max-width: var(--max-body-width);
   margin: 0 auto;
+
   display: grid;
   grid-template-columns: 110px 1fr;
   gap: 18px;
-  align-items: start;
   padding: 0 18px;
 }
 
@@ -290,63 +295,36 @@ nav a:focus {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  align-items: center;
-  padding: 12px 16px;
 }
 
 .skill {
   background: var(--skill-bubble);
-  color: var(--text);
   padding: 8px 12px;
-  border-radius: 999px; 
+  border-radius: 999px;
   font-size: 0.8rem;
-  box-shadow: 0 2px 6px rgba(16,20,24,0.04);
 }
 
 .skill.alt { background: var(--skill-bubble-2); }
 
 @media (max-width: 700px) {
   .skills-container { grid-template-columns: 1fr; text-align: center; }
-  .skills-title h2 { margin-bottom: 10px; text-align: center; }
   .skills-grid { justify-content: center; }
 }
 
-/* --------------------------
-   8. INFO CARDS / SIDE BLURBS
-   -------------------------- */
-/* ---- INFO CARDS (unchanged visually) ---- */
-.info-card {
-  background: var(--info-card-bg);
-  padding: 12px 5px;
-  margin: 12px 0;
-  width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 6px 20px rgba(16,20,24,0.30);
-  max-width: 500px;
-  font-size: 0.8rem;
-  color: var(--text);
-}
 
-
-/* ---- FIXED CONTENT WRAPPER (centered + smaller gap) ---- */
+/* =========================================================
+   9. INFO CARDS + CONTENT WRAPPER
+   ========================================================= */
 .content-wrapper {
-  display: flex;
-  gap: 32px;        
-  align-items: flex-start;
   max-width: var(--max-body-width);
-  margin: 0 auto 40px auto;
-  padding: 0; 
+  margin: 0 auto 40px;
+  padding: 0 var(--page-padding);
+
+  display: flex;
+  gap: 32px;
 }
 
-
-/* ---- CONTENT LEFT (moved inward, no more extreme-left alignment) ---- */
-.content-left {
-  flex: 1;
-  max-width: 60%;
-}
-
-
-/* ---- CONTENT RIGHT (cards) ---- */
+.content-left { flex: 1; }
 .content-right {
   flex: 0 0 35%;
   display: flex;
@@ -354,50 +332,45 @@ nav a:focus {
   gap: 18px;
 }
 
-.info-card h3 {
-  margin-top: 0;
-  margin-bottom: 12px;
-  padding: 0 16px;
-  color: #343638;
-  font-size: 1.2rem;
+.info-card {
+  background: var(--info-card-bg);
+  padding: 12px 10px;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(16,20,24,0.30);
+  font-size: 0.85rem;
 }
 
-/* ---- MOBILE STACKING (unchanged) ---- */
+.info-card h3 {
+  margin: 0 0 12px;
+  padding: 0 16px;
+  color: var(--text);
+}
+
 @media (max-width: 768px) {
   .content-wrapper {
     flex-direction: column;
     gap: 24px;
   }
-
-  .content-left,
-  .content-right {
-    max-width: 100%;
-  }
 }
 
-/* --------------------------
-   9. TYPOGRAPHY HELPERS
-   -------------------------- */
-h1, h2, h3, h4, h5 { color: var(--text); margin: 0 0 10px 0; }
-p { margin: 0 0 14px 0; color: var(--muted-text); }
-.section-title { color: var(--text); font-weight: 600; }
-.center { text-align: center; }
 
-/* --------------------------
-   10. NAV MOBILE BEHAVIOR
-   -------------------------- */
-@media (max-width: 768px) {
-  .nav-toggle { display: block; margin-left: 12px; }
-  nav ul { display: none; flex-direction: column; background: var(--accent); width: 100%; padding: 12px; border-radius: 6px; }
-  nav ul.open { display: flex; }
-  nav li { width: 100%; }
-  nav a { width: 100%; padding: 12px 14px; border-radius: 6px; }
+/* =========================================================
+   10. TYPOGRAPHY
+   ========================================================= */
+h1, h2, h3, h4, h5 {
+  margin: 0 0 10px;
 }
 
-/* --------------------------
-   11. MISC / CLEANUP
-   -------------------------- */
-ul.two-column { columns: 2; column-gap: 28px; }
+p {
+  margin: 0 0 14px;
+  color: var(--muted-text);
+}
+
 ul li { margin-bottom: 10px; }
-/* a { color: inherit; } */
-img { max-width: 100%; height: auto; display: block; }
+
+ul.two-column {
+  columns: 2;
+  column-gap: 28px;
+}
+
+img { max-width: 100%; display: block; }
