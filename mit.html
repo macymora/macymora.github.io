@@ -6,7 +6,9 @@
   <title>MIT</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
+
 <header>
   <nav>
     <span class="nav-toggle">☰</span>
@@ -22,102 +24,132 @@
     </ul>
   </nav>
 </header>
-  <main>
 
+<main>
+
+  <!-- ========================================================= -->
+  <!-- FULL-WIDTH BANNER -->
+  <!-- ========================================================= -->
   <div class="banner-image">
     <img src="images/Slide3.PNG" alt="koch">
-  </div> 
-
- <!-- Drug Delivery-->
-    <section class="project-intro">
-  <div class="page-header">
-  <div class="header-inner">
-    <h1>1. Tuberculosis Drug Delivery</h1>
-  </div>
-</div>
-
-
-<p class="summary">
-    This work introduces a piezo-synchronized imaging technique for removing axial motion artifacts in live bone calcium imaging.
-    The study integrates optical physics, signal processing, and biological validation.
-  </p>
-
-  <!-- Media section: optional poster and embedded talk -->
-  <div class="clearfix">
-    <img src="images/retrievaldevice.png" alt="retrieval" class="align-left">
-    <div class="video-wrapper align-right">
-      <iframe src="https://www.youtube.com/embed/_QmbJkOLlOY" frameborder="0" allowfullscreen></iframe>
-    </div>
   </div>
 
 
+  <!-- ========================================================= -->
+  <!-- SECTION 1 — DRUG DELIVERY -->
+  <!-- ========================================================= -->
+  <section class="project-intro">
 
-</section>
-
-<hr>
-
-<section class="project-content">
-  <h2 class="section-title">🔹 Research Objectives & Contributions</h2>
-  <ul>
-    <li>Developed real-time motion correction algorithms combining mutual information and correlation-based registration.</li>
-    <li>Engineered a piezo-driven imaging setup synchronized with optical acquisition to eliminate depth motion distortions.</li>
-    <li>Demonstrated high temporal fidelity calcium signals in vivo, outperforming traditional single-plane tracking methods.</li>
-    <li>Retrieval device</li>
-    <li>POC in living pig</li>
-    <li>pill press and automated CNC mill with laser cut acrylic holder</li>
-    <li>magnetic hall sensor and magnets on ends of device</li>
-  </ul>
-
-  <h2 class="section-title">⚡ Technical Highlights</h2>
-  <ul>
-    <li>🔥 Wrote high-speed acquisition software in MATLAB and Python integrating with Thorlabs and Hamamatsu APIs.</li>
-    <li>💻 Applied signal denoising and multivariate statistical models for calcium trace analysis (PCA, ICA, and clustering).</li>
-    <li>📊 Developed analysis pipelines for batch processing of 3D imaging datasets (>2 TB) with automated segmentation.</li>
-  </ul>
-
-  <h2 class="section-title">🏅 Awards & Recognition</h2>
-  <ul>
-    <li>Authored 2 publications - journal article and US patent</li>
-    <li>Presented work at two symposiums/li>
-  </ul>
-
-    <!-- FULL-WIDTH SKILLS SECTION -->
-<section class="skills-section">
-  <div class="skills-container">
-    
-    <!-- LEFT COLUMN -->
-    <div class="skills-title">
-      <h2>Skills</h2>
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+      <div class="page-header-inner">
+        <h1>1. Tuberculosis Drug Delivery</h1>
+      </div>
     </div>
 
-    <!-- RIGHT COLUMN -->
-    <div class="skills-grid">
-      <span class="skill">Experimental Design & Data Analysis</span>
-      <span class="skill">MATLAB</span>
-      <span class="skill">Python</span>
-      <span class="skill">ImageJ/Fiji</span>
-      <span class="skill">Signal Processing</span>
-      <span class="skill">Statistical Modeling</span>
-      <span class="skill">Microscopy Instrumentation</span>
+    <p class="summary">
+      This work introduces a piezo-synchronized imaging technique for removing axial motion artifacts in live bone calcium imaging.
+      The study integrates optical physics, signal processing, and biological validation.
+    </p>
+
+    <!-- MEDIA: IMAGE + VIDEO -->
+    <div class="clearfix">
+      <img src="images/retrievaldevice.png" alt="retrieval" class="w-40">
+
+      <div class="video-wrapper w-60">
+        <iframe
+          src="https://www.youtube.com/embed/_QmbJkOLlOY"
+          frameborder="0"
+          allowfullscreen>
+        </iframe>
+      </div>
     </div>
 
-  </div>
-</section>
+  </section>
 
-  </div>
 
+  <hr>
+
+
+  <!-- ========================================================= -->
+  <!-- SECTION CONTENT -->
+  <!-- ========================================================= -->
+  <section class="project-content">
+
+    <h2 class="section-title">🔹 Research Objectives & Contributions</h2>
+    <ul>
+      <li>Developed real-time motion correction algorithms combining mutual information and correlation-based registration.</li>
+      <li>Engineered a piezo-driven imaging setup synchronized with optical acquisition to eliminate depth motion distortions.</li>
+      <li>Demonstrated high temporal fidelity calcium signals in vivo, outperforming traditional single-plane tracking methods.</li>
+      <li>Designed a retrieval device for drug delivery experiments.</li>
+      <li>Performed proof-of-concept trials in live pig models.</li>
+      <li>Fabricated pill press and CNC-machined components with custom laser-cut holders.</li>
+      <li>Integrated magnetic hall sensors and magnet arrays for positional tracking.</li>
+    </ul>
+
+    <h2 class="section-title">⚡ Technical Highlights</h2>
+    <ul>
+      <li>Wrote high-speed acquisition software in MATLAB and Python integrating Thorlabs and Hamamatsu APIs.</li>
+      <li>Applied signal denoising and multivariate models (PCA, ICA, clustering) for calcium-time series analysis.</li>
+      <li>Built automated pipelines for batch processing & segmentation of >2 TB imaging datasets.</li>
+    </ul>
+
+    <h2 class="section-title">🏅 Awards & Recognition</h2>
+    <ul>
+      <li>Authored a journal publication and a US patent.</li>
+      <li>Presented work at two symposiums.</li>
+    </ul>
+
+  </section>
+
+
+  <!-- ========================================================= -->
+  <!-- SKILLS SECTION -->
+  <!-- ========================================================= -->
+  <section class="skills-section">
+    <div class="skills-container">
+
+      <!-- LEFT -->
+      <div class="skills-title">
+        <h2>Skills</h2>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="skills-grid">
+        <span class="skill">Experimental Design & Data Analysis</span>
+        <span class="skill">MATLAB</span>
+        <span class="skill">Python</span>
+        <span class="skill">ImageJ/Fiji</span>
+        <span class="skill">Signal Processing</span>
+        <span class="skill">Statistical Modeling</span>
+        <span class="skill">Microscopy Instrumentation</span>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================= -->
   <!-- PUBLICATIONS -->
-  <h2 class="section-title">🔗 Publications & Links</h2>
-  <ul>
-    <li>📄 <a href="https://www.science.org/doi/full/10.1126/scitranslmed.aau6267">Science Translational Medicine paper</a></li>
-    <li>📄 <a href="https://patents.google.com/patent/US11576860/en">US patent application</a></li>
-    <li>🧾 <a href="pdfs/MSRP2017_poster.pdf">MSRP presentation</a></li>
-  </ul>
-</section>
+  <!-- ========================================================= -->
+  <section class="project-content">
+    <h2 class="section-title">🔗 Publications & Links</h2>
+    <ul>
+      <li>📄 <a href="https://www.science.org/doi/full/10.1126/scitranslmed.aau6267">Science Translational Medicine paper</a></li>
+      <li>📄 <a href="https://patents.google.com/patent/US11576860/en">US patent application</a></li>
+      <li>🧾 <a href="pdfs/MSRP2017_poster.pdf">MSRP presentation</a></li>
+    </ul>
+  </section>
 
+</main>
+
+
+<!-- ========================================================= -->
+<!-- MOBILE NAV SCRIPT -->
+<!-- ========================================================= -->
 <script>
   document.querySelector('.nav-toggle').onclick = () => {
-    document.querySelector('nav ul').classList.toggle('show');
+    document.querySelector('nav ul').classList.toggle('open');
   };
 </script>
 
