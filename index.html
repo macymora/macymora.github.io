@@ -6,8 +6,12 @@
   <title>Homepage</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
-  <!-- Navigation Bar -->
+
+<!-- =========================
+     NAVIGATION BAR
+========================= -->
 <header>
   <nav>
     <span class="nav-toggle">☰</span>
@@ -23,29 +27,54 @@
     </ul>
   </nav>
 </header>
-  <main>
 
+<main>
+
+<!-- =========================
+     PAGE HEADER
+========================= -->
+<div class="page-header">
+  <div class="page-header-inner">
     <h1>Homepage</h1>
-    <div class="clearfix">
-      <img src="images/profile.png" alt="Example Right" class="align-right">
-      <p>Welcome to my Homepage!</p>
-      <li><a href="pdfs/resume.pdf">professional resume</a></li>
-      <li><a href="pdfs/cv.pdf">extended cv</a></li>
-      <li><a href="https://www.linkedin.com/in/macy-mora-antoinette/">linkedIn</a></li>
+  </div>
+</div>
+
+<!-- =========================
+     TWO-COLUMN LAYOUT
+========================= -->
+<div class="content-wrapper">
+
+  <!-- LEFT COLUMN — PROFILE IMAGE -->
+  <div class="content-left">
+    <img src="images/profile.png" alt="Profile Photo" style="border-radius: 8px;">
+  </div>
+
+  <!-- RIGHT COLUMN — TEXT + LINKS -->
+  <div class="content-right">
+
+    <p>Welcome to my homepage! Below are links to my professional materials and online profiles:</p>
+
+    <ul>
+      <li><a href="pdfs/resume.pdf">Professional Resume</a></li>
+      <li><a href="pdfs/cv.pdf">Extended CV</a></li>
+      <li><a href="https://www.linkedin.com/in/macy-mora-antoinette/">LinkedIn</a></li>
       <li><a href="https://scholar.google.com/citations?authuser=2&user=KlASfcIAAAAJ">Google Scholar</a></li>
       <li><a href="https://orcid.org/0009-0001-8412-1891">ORCID</a></li>
       <li><a href="https://github.com/macymora">GitHub</a></li>
-      <li><a href="pdfs/seniordesign.pdf">senior design</a></li>
-    </div>
+      <li><a href="pdfs/seniordesign.pdf">Senior Design</a></li>
+    </ul>
 
-    <p>Write your text here for the Homepage page. You can include bold, italics, lists, images, and embedded videos.</p>
+    <p>You can find more information about my research, engineering work, and projects throughout this site.</p>
 
-  </main>
+  </div>
+</div>
 
-  <script>
-  document.querySelector('.nav-toggle').onclick = () => {
-    document.querySelector('nav ul').classList.toggle('show');
-  };
+</main>
+
+<script>
+document.querySelector('.nav-toggle').onclick = () => {
+  document.querySelector('nav ul').classList.toggle('open');
+};
 </script>
 
 </body>
