@@ -336,7 +336,7 @@ nav a:focus {
   background: var(--info-card-bg);
   padding: 12px 10px;
   border-radius: 8px;
-  box-shadow: 0 6px 20px rgba(16,20,24,0.30);
+  box-shadow: 0 6px 20px rgba(16,20,24,0.15);
   font-size: 0.85rem;
 }
 
