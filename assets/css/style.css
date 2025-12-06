@@ -214,6 +214,10 @@ nav a:focus {
   padding: 0 var(--page-padding);
 }
 
+.clearfix > * {
+  min-width: 0;
+}
+
 .clearfix img {
   width: 100%;
   height: auto;
