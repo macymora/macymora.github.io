@@ -221,6 +221,14 @@ nav a:focus {
   object-fit: contain;
 }
 
+.profile-pic {
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
 .video-wrapper {
   position: relative;
   width: 100%;
