@@ -319,7 +319,6 @@ nav a:focus {
   max-width: var(--max-body-width);
   margin: 0 auto 40px;
   padding: 0 var(--page-padding);
-
   display: flex;
   gap: 32px;
 }
@@ -334,10 +333,11 @@ nav a:focus {
 
 .info-card {
   background: var(--info-card-bg);
-  padding: 20px 10px;
+  padding: 12px 10px;
   border-radius: 8px;
   box-shadow: 0 6px 20px rgba(16,20,24,0.15);
-  font-size: 0.85rem;
+  font-size: 0.9rem;
+  margin: 20px 0;   /* ⬅ NEW */
 }
 
 .info-card h3 {
