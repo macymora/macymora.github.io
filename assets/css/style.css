@@ -39,6 +39,11 @@ html, body {
   overflow-x: hidden;
 }
 
+main {
+  padding-top: 30px;
+}
+
+
 
 /* =========================================================
    2. CONTAINER
