@@ -216,7 +216,7 @@ nav a:focus {
 
   max-width: var(--max-body-width);
   margin: 0 auto;
-  padding: 5 var(--page-padding);
+  padding: 2px var(--page-padding);
 }
 
 .clearfix img {
